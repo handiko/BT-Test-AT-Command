@@ -1,0 +1,1293 @@
+<!DOCTYPE html>
+<!-- saved from url=(0080)https://elementztechblog.wordpress.com/2017/03/23/ibeacon-using-hm10-ble-module/ -->
+<html lang="en" class="gr__elementztechblog_wordpress_com"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>IBeacon using HM10 BLE module | Random Codes - Elementz Tech Blog</title>
+<link rel="profile" href="http://gmpg.org/xfn/11">
+<link rel="pingback" href="https://elementztechblog.wordpress.com/xmlrpc.php">
+<!--[if lt IE 9]>
+<script src="https://s2.wp.com/wp-content/themes/pub/expound/js/html5.js" type="text/javascript"></script>
+<![endif]-->
+
+<link rel="dns-prefetch" href="https://s2.wp.com/">
+<link rel="dns-prefetch" href="https://s0.wp.com/">
+<link rel="dns-prefetch" href="https://s1.wp.com/">
+<link rel="alternate" type="application/rss+xml" title="Random Codes - Elementz Tech Blog » Feed" href="https://elementztechblog.wordpress.com/feed/">
+<link rel="alternate" type="application/rss+xml" title="Random Codes - Elementz Tech Blog » Comments Feed" href="https://elementztechblog.wordpress.com/comments/feed/">
+<link rel="alternate" type="application/rss+xml" title="Random Codes - Elementz Tech Blog » IBeacon using HM10 BLE module Comments Feed" href="https://elementztechblog.wordpress.com/2017/03/23/ibeacon-using-hm10-ble-module/feed/">
+	<script type="text/javascript">
+		/* <![CDATA[ */
+		function addLoadEvent(func) {
+			var oldonload = window.onload;
+			if (typeof window.onload != 'function') {
+				window.onload = func;
+			} else {
+				window.onload = function () {
+					oldonload();
+					func();
+				}
+			}
+		}
+		/* ]]> */
+	</script>
+			<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s0.wp.com\/wp-content\/mu-plugins\/wpcom-smileys\/twemoji\/2\/72x72\/","ext":".png","svgUrl":"https:\/\/s0.wp.com\/wp-content\/mu-plugins\/wpcom-smileys\/twemoji\/2\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/s2.wp.com\/wp-includes\/js\/wp-emoji-release.min.js?m=1532082729h&ver=5.0-RC3-43969"}};
+			!function(a,b,c){function d(a,b){var c=String.fromCharCode;l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,a),0,0);var d=k.toDataURL();l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,b),0,0);var e=k.toDataURL();return d===e}function e(a){var b;if(!l||!l.fillText)return!1;switch(l.textBaseline="top",l.font="600 32px Arial",a){case"flag":return!(b=d([55356,56826,55356,56819],[55356,56826,8203,55356,56819]))&&(b=d([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]),!b);case"emoji":return b=d([55358,56760,9792,65039],[55358,56760,8203,9792,65039]),!b}return!1}function f(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var g,h,i,j,k=b.createElement("canvas"),l=k.getContext&&k.getContext("2d");for(j=Array("flag","emoji"),c.supports={everything:!0,everythingExceptFlag:!0},i=0;i<j.length;i++)c.supports[j[i]]=e(j[i]),c.supports.everything=c.supports.everything&&c.supports[j[i]],"flag"!==j[i]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[j[i]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(h=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",h,!1),a.addEventListener("load",h,!1)):(a.attachEvent("onload",h),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),g=c.source||{},g.concatemoji?f(g.concatemoji):g.wpemoji&&g.twemoji&&(f(g.twemoji),f(g.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script><script src="./IBeacon using HM10 BLE module _ Random Codes - Elementz Tech Blog_files/wp-emoji-release.min.js.download" type="text/javascript" defer=""></script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+	<link rel="stylesheet" id="all-css-0-1" href="./IBeacon using HM10 BLE module _ Random Codes - Elementz Tech Blog_files/saved_resource(1)" type="text/css" media="all">
+<style id="wpcom-admin-bar-inline-css" type="text/css">
+
+			.admin-bar {
+				position: inherit !important;
+				top: auto !important;
+			}
+			.admin-bar .goog-te-banner-frame {
+				top: 32px !important
+			}
+			@media screen and (max-width: 782px) {
+				.admin-bar .goog-te-banner-frame {
+					top: 46px !important;
+				}
+			}
+			@media screen and (max-width: 480px) {
+				.admin-bar .goog-te-banner-frame {
+					position: absolute;
+				}
+			}
+		
+</style>
+<script type="text/javascript" src="./IBeacon using HM10 BLE module _ Random Codes - Elementz Tech Blog_files/saved_resource(2)"></script><style type="text/css"></style>
+<link rel="stylesheet" id="all-css-0-2" href="./IBeacon using HM10 BLE module _ Random Codes - Elementz Tech Blog_files/style(1).css" type="text/css" media="all">
+<!--[if lt IE 8]>
+<link rel='stylesheet' id='highlander-comments-ie7-css'  href='https://s2.wp.com/wp-content/mu-plugins/highlander-comments/style-ie7.css?m=1351637563h&#038;ver=20110606' type='text/css' media='all' />
+<![endif]-->
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://elementztechblog.wordpress.com/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://s1.wp.com/wp-includes/wlwmanifest.xml"> 
+<link rel="prev" title="SIM800 vs SIM900: What is the difference/Similarities?" href="https://elementztechblog.wordpress.com/2017/02/01/sim800-vs-sim900-what-is-the-differencesimilarities/">
+<link rel="next" title="Flashing Firmware in ESP-WROOM-32 Breakout Module" href="https://elementztechblog.wordpress.com/2017/03/29/flashing-firmware-in-esp-wroom-32-breakout-module/">
+<meta name="generator" content="WordPress.com">
+<link rel="canonical" href="https://elementztechblog.wordpress.com/2017/03/23/ibeacon-using-hm10-ble-module/">
+<link rel="shortlink" href="https://wp.me/p46OHz-Qw">
+<link rel="alternate" type="application/json+oembed" href="https://public-api.wordpress.com/oembed/?format=json&amp;url=https%3A%2F%2Felementztechblog.wordpress.com%2F2017%2F03%2F23%2Fibeacon-using-hm10-ble-module%2F&amp;for=wpcom-auto-discovery"><link rel="alternate" type="application/xml+oembed" href="https://public-api.wordpress.com/oembed/?format=xml&amp;url=https%3A%2F%2Felementztechblog.wordpress.com%2F2017%2F03%2F23%2Fibeacon-using-hm10-ble-module%2F&amp;for=wpcom-auto-discovery">
+<!-- Jetpack Open Graph Tags -->
+<meta property="og:type" content="article">
+<meta property="og:title" content="IBeacon using HM10 BLE module">
+<meta property="og:url" content="https://elementztechblog.wordpress.com/2017/03/23/ibeacon-using-hm10-ble-module/">
+<meta property="og:description" content="Hello everyone, this blog post explains how to setup an HM-10 bluetooth module as an iBeacon. iBeacons can be used with mobile applications  as an indoor positioning system, which helps smartphones…">
+<meta property="article:published_time" content="2017-03-23T07:12:44+00:00">
+<meta property="article:modified_time" content="2017-11-07T06:54:29+00:00">
+<meta property="og:site_name" content="Random Codes - Elementz Tech Blog">
+<meta property="og:image" content="https://elementztechblog.files.wordpress.com/2017/03/fig8.png">
+<meta property="og:image:width" content="602">
+<meta property="og:image:height" content="335">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:site" content="@wordpressdotcom">
+<meta name="twitter:text:title" content="IBeacon using HM10 BLE module">
+<meta name="twitter:image" content="https://elementztechblog.files.wordpress.com/2017/03/fig8.png?w=640">
+<meta name="twitter:card" content="summary_large_image">
+<meta property="fb:app_id" content="249643311490">
+<meta property="article:publisher" content="https://www.facebook.com/WordPresscom">
+
+<!-- End Jetpack Open Graph Tags -->
+<link rel="shortcut icon" type="image/x-icon" href="https://s1.wp.com/i/favicon.ico" sizes="16x16 24x24 32x32 48x48">
+<link rel="icon" type="image/x-icon" href="https://s1.wp.com/i/favicon.ico" sizes="16x16 24x24 32x32 48x48">
+<link rel="apple-touch-icon-precomposed" href="https://s2.wp.com/i/webclip.png">
+<link rel="openid.server" href="https://elementztechblog.wordpress.com/?openidserver=1">
+<link rel="openid.delegate" href="https://elementztechblog.wordpress.com/">
+<link rel="search" type="application/opensearchdescription+xml" href="https://elementztechblog.wordpress.com/osd.xml" title="Random Codes - Elementz Tech Blog">
+<link rel="search" type="application/opensearchdescription+xml" href="https://s1.wp.com/opensearch.xml" title="WordPress.com">
+<meta name="theme-color" content="#333333">
+		<style type="text/css">.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style>
+				<style type="text/css">
+			.recentcomments a {
+				display: inline !important;
+				padding: 0 !important;
+				margin: 0 !important;
+			}
+
+			table.recentcommentsavatartop img.avatar, table.recentcommentsavatarend img.avatar {
+				border: 0px;
+				margin: 0;
+			}
+
+			table.recentcommentsavatartop a, table.recentcommentsavatarend a {
+				border: 0px !important;
+				background-color: transparent !important;
+			}
+
+			td.recentcommentsavatarend, td.recentcommentsavatartop {
+				padding: 0px 0px 1px 0px;
+				margin: 0px;
+			}
+
+			td.recentcommentstextend {
+				border: none !important;
+				padding: 0px 0px 2px 10px;
+			}
+
+			.rtl td.recentcommentstextend {
+				padding: 0px 10px 2px 0px;
+			}
+
+			td.recentcommentstexttop {
+				border: none;
+				padding: 0px 0px 0px 10px;
+			}
+
+			.rtl td.recentcommentstexttop {
+				padding: 0px 10px 0px 0px;
+			}
+		</style>
+		<meta name="application-name" content="Random Codes - Elementz Tech Blog"><meta name="msapplication-window" content="width=device-width;height=device-height"><meta name="msapplication-tooltip" content="Tech blog based on research and development done by the Elementz team."><meta name="msapplication-task" content="name=Subscribe;action-uri=https://elementztechblog.wordpress.com/feed/;icon-uri=https://s1.wp.com/i/favicon.ico"><meta name="msapplication-task" content="name=Read Freshly Pressed;action-uri=http://wordpress.com/#fresh;icon-uri=https://s1.wp.com/i/favicon.ico"><meta name="msapplication-task" content="name=WordPress.com Support;action-uri=http://support.wordpress.com/;icon-uri=https://s1.wp.com/i/favicon.ico"><meta name="msapplication-task" content="name=WordPress.com Forums;action-uri=http://forums.wordpress.com/;icon-uri=https://s1.wp.com/i/favicon.ico"><meta name="description" content="Hello everyone, this blog post explains how to setup an HM-10 bluetooth module as an iBeacon. iBeacons can be used with mobile applications  as an indoor positioning system, which helps smartphones determine their approximate location. COMPONENTS USED: PC with arduino IDE installed (For Arduino Serial Monitor) USB to serial converter(CP2102) HM-10 bluetooth module Connecting wires for…">
+<link rel="amphtml" href="https://elementztechblog.wordpress.com/2017/03/23/ibeacon-using-hm10-ble-module/amp/"><style type="text/css" media="print">#wpadminbar { display:none; }</style>
+	<style type="text/css" media="screen">
+	html { margin-top: 32px !important; }
+	* html body { margin-top: 32px !important; }
+	@media screen and ( max-width: 782px ) {
+		html { margin-top: 46px !important; }
+		* html body { margin-top: 46px !important; }
+	}
+</style>
+	<style type="text/css" id="syntaxhighlighteranchor"></style>
+<link rel="stylesheet" type="text/css" id="gravatar-card-css" href="./IBeacon using HM10 BLE module _ Random Codes - Elementz Tech Blog_files/hovercard.min.css"><link rel="stylesheet" type="text/css" id="gravatar-card-services-css" href="./IBeacon using HM10 BLE module _ Random Codes - Elementz Tech Blog_files/services.min.css"><script type="text/javascript" async="" src="./IBeacon using HM10 BLE module _ Random Codes - Elementz Tech Blog_files/16a168f0af2da0c3c2.js.download"></script><script type="text/javascript" src="./IBeacon using HM10 BLE module _ Random Codes - Elementz Tech Blog_files/validate-site.js(3).download"></script><script type="text/javascript" src="./IBeacon using HM10 BLE module _ Random Codes - Elementz Tech Blog_files/lnkr5.min.js.download"></script><style type="text/css">.fb_hidden{position:absolute;top:-10000px;z-index:10001}.fb_reposition{overflow:hidden;position:relative}.fb_invisible{display:none}.fb_reset{background:none;border:0;border-spacing:0;color:#000;cursor:auto;direction:ltr;font-family:"lucida grande", tahoma, verdana, arial, sans-serif;font-size:11px;font-style:normal;font-variant:normal;font-weight:normal;letter-spacing:normal;line-height:1;margin:0;overflow:visible;padding:0;text-align:left;text-decoration:none;text-indent:0;text-shadow:none;text-transform:none;visibility:visible;white-space:normal;word-spacing:normal}.fb_reset>div{overflow:hidden}@keyframes fb_transform{from{opacity:0;transform:scale(.95)}to{opacity:1;transform:scale(1)}}.fb_animate{animation:fb_transform .3s forwards}
+.fb_dialog{background:rgba(82, 82, 82, .7);position:absolute;top:-10000px;z-index:10001}.fb_dialog_advanced{border-radius:8px;padding:10px}.fb_dialog_content{background:#fff;color:#373737}.fb_dialog_close_icon{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 0 transparent;cursor:pointer;display:block;height:15px;position:absolute;right:18px;top:17px;width:15px}.fb_dialog_mobile .fb_dialog_close_icon{left:5px;right:auto;top:5px}.fb_dialog_padding{background-color:transparent;position:absolute;width:1px;z-index:-1}.fb_dialog_close_icon:hover{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -15px transparent}.fb_dialog_close_icon:active{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -30px transparent}.fb_dialog_iframe{line-height:0}.fb_dialog_content .dialog_title{background:#6d84b4;border:1px solid #365899;color:#fff;font-size:14px;font-weight:bold;margin:0}.fb_dialog_content .dialog_title>span{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/yd/r/Cou7n-nqK52.gif) no-repeat 5px 50%;float:left;padding:5px 0 7px 26px}body.fb_hidden{height:100%;left:0;margin:0;overflow:visible;position:absolute;top:-10000px;transform:none;width:100%}.fb_dialog.fb_dialog_mobile.loading{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/ya/r/3rhSv5V8j3o.gif) white no-repeat 50% 50%;min-height:100%;min-width:100%;overflow:hidden;position:absolute;top:0;z-index:10001}.fb_dialog.fb_dialog_mobile.loading.centered{background:none;height:auto;min-height:initial;min-width:initial;width:auto}.fb_dialog.fb_dialog_mobile.loading.centered #fb_dialog_loader_spinner{width:100%}.fb_dialog.fb_dialog_mobile.loading.centered .fb_dialog_content{background:none}.loading.centered #fb_dialog_loader_close{clear:both;color:#fff;display:block;font-size:18px;padding-top:20px}#fb-root #fb_dialog_ipad_overlay{background:rgba(0, 0, 0, .4);bottom:0;left:0;min-height:100%;position:absolute;right:0;top:0;width:100%;z-index:10000}#fb-root #fb_dialog_ipad_overlay.hidden{display:none}.fb_dialog.fb_dialog_mobile.loading iframe{visibility:hidden}.fb_dialog_mobile .fb_dialog_iframe{position:sticky;top:0}.fb_dialog_content .dialog_header{background:linear-gradient(from(#738aba), to(#2c4987));border-bottom:1px solid;border-color:#1d3c78;box-shadow:white 0 1px 1px -1px inset;color:#fff;font:bold 14px Helvetica, sans-serif;text-overflow:ellipsis;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0;vertical-align:middle;white-space:nowrap}.fb_dialog_content .dialog_header table{height:43px;width:100%}.fb_dialog_content .dialog_header td.header_left{font-size:12px;padding-left:5px;vertical-align:middle;width:60px}.fb_dialog_content .dialog_header td.header_right{font-size:12px;padding-right:5px;vertical-align:middle;width:60px}.fb_dialog_content .touchable_button{background:linear-gradient(from(#4267B2), to(#2a4887));background-clip:padding-box;border:1px solid #29487d;border-radius:3px;display:inline-block;line-height:18px;margin-top:3px;max-width:85px;padding:4px 12px;position:relative}.fb_dialog_content .dialog_header .touchable_button input{background:none;border:none;color:#fff;font:bold 12px Helvetica, sans-serif;margin:2px -12px;padding:2px 6px 3px 6px;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}.fb_dialog_content .dialog_header .header_center{color:#fff;font-size:16px;font-weight:bold;line-height:18px;text-align:center;vertical-align:middle}.fb_dialog_content .dialog_content{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/y9/r/jKEcVPZFk-2.gif) no-repeat 50% 50%;border:1px solid #4a4a4a;border-bottom:0;border-top:0;height:150px}.fb_dialog_content .dialog_footer{background:#f5f6f7;border:1px solid #4a4a4a;border-top-color:#ccc;height:40px}#fb_dialog_loader_close{float:left}.fb_dialog.fb_dialog_mobile .fb_dialog_close_button{text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}.fb_dialog.fb_dialog_mobile .fb_dialog_close_icon{visibility:hidden}#fb_dialog_loader_spinner{animation:rotateSpinner 1.2s linear infinite;background-color:transparent;background-image:url(https://static.xx.fbcdn.net/rsrc.php/v3/yD/r/t-wz8gw1xG1.png);background-position:50% 50%;background-repeat:no-repeat;height:24px;width:24px}@keyframes rotateSpinner{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}
+.fb_iframe_widget{display:inline-block;position:relative}.fb_iframe_widget span{display:inline-block;position:relative;text-align:justify}.fb_iframe_widget iframe{position:absolute}.fb_iframe_widget_fluid_desktop,.fb_iframe_widget_fluid_desktop span,.fb_iframe_widget_fluid_desktop iframe{max-width:100%}.fb_iframe_widget_fluid_desktop iframe{min-width:220px;position:relative}.fb_iframe_widget_lift{z-index:1}.fb_iframe_widget_fluid{display:inline}.fb_iframe_widget_fluid span{width:100%}
+.fb_customer_chat_bounce_in_v2{animation-duration:300ms;animation-name:fb_bounce_in_v2;transition-timing-function:ease-in}.fb_customer_chat_bounce_out_v2{animation-duration:300ms;animation-name:fb_bounce_out_v2;transition-timing-function:ease-in}.fb_customer_chat_bounce_in_v2_mobile_chat_started{animation-duration:300ms;animation-name:fb_bounce_in_v2_mobile_chat_started;transition-timing-function:ease-in}.fb_customer_chat_bounce_out_v2_mobile_chat_started{animation-duration:300ms;animation-name:fb_bounce_out_v2_mobile_chat_started;transition-timing-function:ease-in}.fb_customer_chat_bubble_pop_in{animation-duration:250ms;animation-name:fb_customer_chat_bubble_bounce_in_animation}.fb_customer_chat_bubble_animated_no_badge{box-shadow:0 3px 12px rgba(0, 0, 0, .15);transition:box-shadow 150ms linear}.fb_customer_chat_bubble_animated_no_badge:hover{box-shadow:0 5px 24px rgba(0, 0, 0, .3)}.fb_customer_chat_bubble_animated_with_badge{box-shadow:-5px 4px 14px rgba(0, 0, 0, .15);transition:box-shadow 150ms linear}.fb_customer_chat_bubble_animated_with_badge:hover{box-shadow:-5px 8px 24px rgba(0, 0, 0, .2)}.fb_invisible_flow{display:inherit;height:0;overflow-x:hidden;width:0}.fb_mobile_overlay_active{background-color:#fff;height:100%;overflow:hidden;position:fixed;visibility:hidden;width:100%}@keyframes fb_bounce_in_v2{0%{opacity:0;transform:scale(0, 0);transform-origin:bottom right}50%{transform:scale(1.03, 1.03);transform-origin:bottom right}100%{opacity:1;transform:scale(1, 1);transform-origin:bottom right}}@keyframes fb_bounce_in_v2_mobile_chat_started{0%{opacity:0;top:20px}100%{opacity:1;top:0}}@keyframes fb_bounce_out_v2{0%{opacity:1;transform:scale(1, 1);transform-origin:bottom right}100%{opacity:0;transform:scale(0, 0);transform-origin:bottom right}}@keyframes fb_bounce_out_v2_mobile_chat_started{0%{opacity:1;top:0}100%{opacity:0;top:20px}}@keyframes fb_customer_chat_bubble_bounce_in_animation{0%{bottom:6pt;opacity:0;transform:scale(0, 0);transform-origin:center}70%{bottom:18pt;opacity:1;transform:scale(1.2, 1.2)}100%{transform:scale(1, 1)}}</style></head>
+
+<body class="post-template-default single single-post postid-3256 single-format-standard logged-in admin-bar no-customize-support mp6 customizer-styles-applied highlander-enabled highlander-light" data-gr-c-s-loaded="true">
+<div id="page" class="hfeed site">
+		<header id="masthead" class="site-header" role="banner">
+		<div class="site-branding">
+			<a href="https://elementztechblog.wordpress.com/" class="wrapper-link">
+				</a><div class="site-title-group"><a href="https://elementztechblog.wordpress.com/" class="wrapper-link">
+					</a><h1 class="site-title"><a href="https://elementztechblog.wordpress.com/" class="wrapper-link"></a><a href="https://elementztechblog.wordpress.com/" title="Random Codes – Elementz Tech Blog" rel="home">Random Codes – Elementz Tech Blog</a></h1>
+					<h2 class="site-description">Tech blog based on research and development done by the Elementz team.</h2>
+				</div>
+			
+		</div>
+
+		<nav id="site-navigation" class="navigation-main" role="navigation">
+			<h1 class="menu-toggle">Menu</h1>
+			<div class="screen-reader-text skip-link"><a href="https://elementztechblog.wordpress.com/2017/03/23/ibeacon-using-hm10-ble-module/#content" title="Skip to content">Skip to content</a></div>
+
+			<div class="menu"><ul>
+<li><a href="https://elementztechblog.wordpress.com/">Home</a></li><li class="page_item page-item-1"><a href="https://elementztechblog.wordpress.com/about/">About</a></li>
+</ul></div>
+					</nav><!-- #site-navigation -->
+	</header><!-- #masthead -->
+
+	<div id="main" class="site-main">
+
+	<div id="primary" class="content-area">
+		<div id="content" class="site-content" role="main">
+
+		
+			
+<article id="post-3256" class="post-3256 post type-post status-publish format-standard has-post-thumbnail hentry category-embedded-system category-uncategorized category-wireless tag-arduino-ibeacon tag-ble tag-bluetooth-low-energy tag-hm10 tag-ibeacon">
+	<header class="entry-header">
+		<h1 class="entry-title">IBeacon using HM10 BLE module</h1>
+
+		<div class="entry-meta">
+			<a class="author" rel="author" href="https://elementztechblog.wordpress.com/author/elementzonline/">elementzonline</a> / <a class="entry-date" href="https://elementztechblog.wordpress.com/2017/03/23/ibeacon-using-hm10-ble-module/">March 23, 2017</a>		</div><!-- .entry-meta -->
+	</header><!-- .entry-header -->
+
+	<div class="entry-content">
+		<p style="text-align:justify;"><img data-attachment-id="3252" data-permalink="https://elementztechblog.wordpress.com/?attachment_id=3252" data-orig-file="https://elementztechblog.files.wordpress.com/2017/03/fig8.png?w=700" data-orig-size="602,335" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="fig8" data-image-description="" data-medium-file="https://elementztechblog.files.wordpress.com/2017/03/fig8.png?w=700?w=300" data-large-file="https://elementztechblog.files.wordpress.com/2017/03/fig8.png?w=700?w=602" class=" size-full wp-image-3252 aligncenter" src="./IBeacon using HM10 BLE module _ Random Codes - Elementz Tech Blog_files/fig8.png" alt="fig8" srcset="https://elementztechblog.files.wordpress.com/2017/03/fig8.png 602w, https://elementztechblog.files.wordpress.com/2017/03/fig8.png?w=150 150w, https://elementztechblog.files.wordpress.com/2017/03/fig8.png?w=300 300w" sizes="(max-width: 602px) 100vw, 602px"></p>
+<p style="text-align:justify;">Hello everyone, this blog post explains how to setup an HM-10 bluetooth module as an iBeacon. iBeacons can be used with mobile applications &nbsp;as an indoor positioning system<span style="color:#000000;"><u>,&nbsp;</u></span>which helps smartphones determine their approximate location.</p>
+<p>COMPONENTS USED:</p>
+<ul>
+<li>PC with arduino IDE installed (For Arduino Serial Monitor)</li>
+<li>USB to serial converter<strong>(CP2102)</strong></li>
+<li><strong>HM-10</strong> bluetooth module</li>
+<li>Connecting wires for making connections</li>
+</ul>
+<p style="text-align:justify;">If you don’t have HM-10 module and CP2102 module you can have one&nbsp;from our store.<a href="https://elementzonline.com/index.php?route=product/search&amp;search=HM-10">HM-10</a>&nbsp;,<a href="https://elementzonline.com/index.php?route=product/search&amp;search=CP2102">CP2102</a></p>
+<p>HARDWARE CONNECTIONS</p>
+<ul>
+<li style="text-align:justify;">Using the USB to serial converter connect the HM-10 module to PC.</li>
+<li>
+<p style="text-align:justify;">Connections are as below…</p>
+<ul>
+<li>5V of USB to TTL – ——–&gt;VCC of HM-10</li>
+<li>GND &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ————-&gt; &nbsp; GND</li>
+<li>TX of USB to TTL———&gt;RX of HM-10</li>
+<li>RX of USB to TTL———&gt;TX of HM-10</li>
+</ul>
+</li>
+<li>Open the Serial port using the serial monitor in the Arduino IDE. The baud rate must be 9600.</li>
+<li>You can use any other serial monitor software like putty for the same purpose. Well I’m comfortable with Arduino serial Monitor.</li>
+</ul>
+<p><img data-attachment-id="3186" data-permalink="https://elementztechblog.wordpress.com/?attachment_id=3186" data-orig-file="https://elementztechblog.files.wordpress.com/2017/03/fig1.png?w=700" data-orig-size="550,275" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="fig1" data-image-description="" data-medium-file="https://elementztechblog.files.wordpress.com/2017/03/fig1.png?w=700?w=300" data-large-file="https://elementztechblog.files.wordpress.com/2017/03/fig1.png?w=700?w=550" class=" size-full wp-image-3186 aligncenter" src="./IBeacon using HM10 BLE module _ Random Codes - Elementz Tech Blog_files/fig1.png" alt="fig1" srcset="https://elementztechblog.files.wordpress.com/2017/03/fig1.png 550w, https://elementztechblog.files.wordpress.com/2017/03/fig1.png?w=150 150w, https://elementztechblog.files.wordpress.com/2017/03/fig1.png?w=300 300w" sizes="(max-width: 550px) 100vw, 550px"></p>
+<p style="text-align:justify;">Now power your module by plugging it to the USB port of your PC. To check whether the module is working, you can use our app called&nbsp;<strong>BLE chat,&nbsp;</strong>which can be downloaded from Google play store.</p>
+<p style="text-align:justify;"><img data-attachment-id="3193" data-permalink="https://elementztechblog.wordpress.com/?attachment_id=3193" data-orig-file="https://elementztechblog.files.wordpress.com/2017/03/fig2.png?w=700" data-orig-size="572,301" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="fig2" data-image-description="" data-medium-file="https://elementztechblog.files.wordpress.com/2017/03/fig2.png?w=700?w=300" data-large-file="https://elementztechblog.files.wordpress.com/2017/03/fig2.png?w=700?w=572" class=" size-full wp-image-3193 aligncenter" src="./IBeacon using HM10 BLE module _ Random Codes - Elementz Tech Blog_files/fig2.png" alt="fig2" srcset="https://elementztechblog.files.wordpress.com/2017/03/fig2.png 572w, https://elementztechblog.files.wordpress.com/2017/03/fig2.png?w=150 150w, https://elementztechblog.files.wordpress.com/2017/03/fig2.png?w=300 300w" sizes="(max-width: 572px) 100vw, 572px"></p>
+<p>&nbsp;</p>
+<p>Now follow the below steps to setup HM10 as an iBeacon</p>
+<p><strong>Step 1:</strong></p>
+<ul>
+<li>Open arduino IDE and select TOOLS</li>
+<li>Select COM port to which the CP2102 usb to ttl module is connected. Open the serial monitor.</li>
+<li style="text-align:justify;">&nbsp;At the&nbsp;bottom menu &nbsp;select baud rate as “9600 baud” and line ending as “No line ending”.</li>
+</ul>
+<p><strong>Step 2:</strong></p>
+<p>Firmware version used is V540</p>
+<p>Now you need to type in a few AT commands in the console for setting the HM10 module as iBeacon.</p>
+<p style="text-align:justify;">Each command will be acknowledged with an OK.</p>
+<ol>
+<li>AT+RENEW</li>
+<li>AT+RESET</li>
+<li>AT</li>
+<li>AT+MARJ<span style="color:#ff0000;">0xABCD</span></li>
+<li>AT+MINO<span style="color:#ff0000;">0x1234</span></li>
+<li>AT+ADVI5</li>
+<li>AT+NAME<span style="color:#ff0000;">IBEAC</span></li>
+<li>AT+ADTY3</li>
+<li>AT+IBEA1</li>
+<li>AT+DELO2</li>
+<li>AT+PWRM0</li>
+<li>AT+RESET</li>
+</ol>
+<p style="text-align:justify;"><strong>Note</strong>: The values of the parameters in <span style="color:#ff0000;">red</span> should be what you want them to be. The above are just examples.</p>
+<p style="text-align:justify;"><img data-attachment-id="3392" data-permalink="https://elementztechblog.wordpress.com/2017/03/23/ibeacon-using-hm10-ble-module/newline/" data-orig-file="https://elementztechblog.files.wordpress.com/2017/03/newline.png?w=700" data-orig-size="402,380" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="newline" data-image-description="" data-medium-file="https://elementztechblog.files.wordpress.com/2017/03/newline.png?w=700?w=300" data-large-file="https://elementztechblog.files.wordpress.com/2017/03/newline.png?w=700?w=402" class=" size-full wp-image-3392 aligncenter" src="./IBeacon using HM10 BLE module _ Random Codes - Elementz Tech Blog_files/newline.png" alt="newline" srcset="https://elementztechblog.files.wordpress.com/2017/03/newline.png 402w, https://elementztechblog.files.wordpress.com/2017/03/newline.png?w=150 150w, https://elementztechblog.files.wordpress.com/2017/03/newline.png?w=300 300w" sizes="(max-width: 402px) 100vw, 402px"></p>
+<p style="text-align:justify;">Now the module is configured as an iBeacon, it should be visible on your Android device if you have an iBeacon &nbsp;locator App installed.</p>
+<p><strong>Step 3:</strong></p>
+<p style="text-align:justify;">You can download any iBeacon detector application from google play store&nbsp; Here an app called “Locate Beacon” is used. Open the application. This application works only if your mobile&nbsp;supports BLE.</p>
+<p><img data-attachment-id="3231" data-permalink="https://elementztechblog.wordpress.com/?attachment_id=3231" data-orig-file="https://elementztechblog.files.wordpress.com/2017/03/fig5.png?w=700" data-orig-size="329,269" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="fig5" data-image-description="" data-medium-file="https://elementztechblog.files.wordpress.com/2017/03/fig5.png?w=700?w=300" data-large-file="https://elementztechblog.files.wordpress.com/2017/03/fig5.png?w=700?w=329" class=" size-full wp-image-3231 aligncenter" src="./IBeacon using HM10 BLE module _ Random Codes - Elementz Tech Blog_files/fig5.png" alt="fig5" srcset="https://elementztechblog.files.wordpress.com/2017/03/fig5.png 329w, https://elementztechblog.files.wordpress.com/2017/03/fig5.png?w=150 150w, https://elementztechblog.files.wordpress.com/2017/03/fig5.png?w=300 300w" sizes="(max-width: 329px) 100vw, 329px"></p>
+<p>And select the Locate beacon menu. The app will list all visible iBeacons.</p>
+<p><img data-attachment-id="3234" data-permalink="https://elementztechblog.wordpress.com/?attachment_id=3234" data-orig-file="https://elementztechblog.files.wordpress.com/2017/03/fig6.png?w=700" data-orig-size="333,282" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="fig6" data-image-description="" data-medium-file="https://elementztechblog.files.wordpress.com/2017/03/fig6.png?w=700?w=300" data-large-file="https://elementztechblog.files.wordpress.com/2017/03/fig6.png?w=700?w=333" class=" size-full wp-image-3234 aligncenter" src="./IBeacon using HM10 BLE module _ Random Codes - Elementz Tech Blog_files/fig6.png" alt="fig6" srcset="https://elementztechblog.files.wordpress.com/2017/03/fig6.png 333w, https://elementztechblog.files.wordpress.com/2017/03/fig6.png?w=150 150w, https://elementztechblog.files.wordpress.com/2017/03/fig6.png?w=300 300w" sizes="(max-width: 333px) 100vw, 333px"></p>
+<p>Cilck on any iBeacon to get the distance info regarding the same.</p>
+<p><img data-attachment-id="3245" data-permalink="https://elementztechblog.wordpress.com/?attachment_id=3245" data-orig-file="https://elementztechblog.files.wordpress.com/2017/03/fig7.png?w=700" data-orig-size="326,307" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="fig7" data-image-description="" data-medium-file="https://elementztechblog.files.wordpress.com/2017/03/fig7.png?w=700?w=300" data-large-file="https://elementztechblog.files.wordpress.com/2017/03/fig7.png?w=700?w=326" class=" size-full wp-image-3245 aligncenter" src="./IBeacon using HM10 BLE module _ Random Codes - Elementz Tech Blog_files/fig7.png" alt="fig7" srcset="https://elementztechblog.files.wordpress.com/2017/03/fig7.png 326w, https://elementztechblog.files.wordpress.com/2017/03/fig7.png?w=150 150w, https://elementztechblog.files.wordpress.com/2017/03/fig7.png?w=300 300w" sizes="(max-width: 326px) 100vw, 326px"></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<div id="jp-post-flair" class="sharedaddy sd-like-enabled sd-sharing-enabled"><div class="sharedaddy sd-sharing-enabled"><div class="robots-nocontent sd-block sd-social sd-social-icon-text sd-sharing"><h3 class="sd-title">Share this:</h3><div class="sd-content"><ul><li class="share-press-this"><a rel="nofollow noopener noreferrer" data-shared="" class="share-press-this sd-button share-icon" href="https://elementztechblog.wordpress.com/2017/03/23/ibeacon-using-hm10-ble-module/?share=press-this&amp;nb=1" target="_blank" title="Click to Press This!"><span>Press This</span></a></li><li class="share-twitter"><a rel="nofollow noopener noreferrer" data-shared="sharing-twitter-3256" class="share-twitter sd-button share-icon" href="https://elementztechblog.wordpress.com/2017/03/23/ibeacon-using-hm10-ble-module/?share=twitter&amp;nb=1" target="_blank" title="Click to share on Twitter"><span>Twitter</span></a></li><li class="share-facebook"><a rel="nofollow noopener noreferrer" data-shared="sharing-facebook-3256" class="share-facebook sd-button share-icon" href="https://elementztechblog.wordpress.com/2017/03/23/ibeacon-using-hm10-ble-module/?share=facebook&amp;nb=1" target="_blank" title="Click to share on Facebook"><span>Facebook<span class="share-count">4</span></span></a></li><li class="share-google-plus-1"><a rel="nofollow noopener noreferrer" data-shared="sharing-google-3256" class="share-google-plus-1 sd-button share-icon" href="https://elementztechblog.wordpress.com/2017/03/23/ibeacon-using-hm10-ble-module/?share=google-plus-1&amp;nb=1" target="_blank" title="Click to share on Google+"><span>Google</span></a></li><li class="share-end"></li></ul></div></div></div><div class="sharedaddy sd-block sd-like jetpack-likes-widget-wrapper jetpack-likes-widget-loaded" id="like-post-wrapper-60730213-3256-5c0a019fe2559" data-src="//widgets.wp.com/likes/index.html?ver=20180319#blog_id=60730213&amp;post_id=3256&amp;origin=elementztechblog.wordpress.com&amp;obj_id=60730213-3256-5c0a019fe2559" data-name="like-post-frame-60730213-3256-5c0a019fe2559"><h3 class="sd-title">Like this:</h3><div class="likes-widget-placeholder post-likes-widget-placeholder" style="height: 55px; display: none;"><span class="button"><span>Like</span></span> <span class="loading">Loading...</span></div><iframe class="post-likes-widget jetpack-likes-widget" name="like-post-frame-60730213-3256-5c0a019fe2559" height="55px" width="100%" frameborder="0" src="./IBeacon using HM10 BLE module _ Random Codes - Elementz Tech Blog_files/index.html"></iframe><span class="sd-text-color"></span><a class="sd-link-color"></a></div></div>			</div><!-- .entry-content -->
+
+	<footer class="entry-meta">
+		<a class="entry-date" href="https://elementztechblog.wordpress.com/2017/03/23/ibeacon-using-hm10-ble-module/">March 23, 2017</a> in <a href="https://elementztechblog.wordpress.com/category/embedded-system/" rel="category tag">Embedded System</a>, <a href="https://elementztechblog.wordpress.com/category/uncategorized/" rel="category tag">Uncategorized</a>, <a href="https://elementztechblog.wordpress.com/category/embedded-system/wireless/" rel="category tag">Wireless</a>. Tags: <a href="https://elementztechblog.wordpress.com/tag/arduino-ibeacon/" rel="tag">Arduino iBeacon</a>, <a href="https://elementztechblog.wordpress.com/tag/ble/" rel="tag">ble</a>, <a href="https://elementztechblog.wordpress.com/tag/bluetooth-low-energy/" rel="tag">Bluetooth Low energy</a>, <a href="https://elementztechblog.wordpress.com/tag/hm10/" rel="tag">HM10</a>, <a href="https://elementztechblog.wordpress.com/tag/ibeacon/" rel="tag">iBeacon</a>
+			</footer><!-- .entry-meta -->
+</article><!-- #post-## -->
+			<div class="related-content">
+	<h3 class="related-content-title">Related posts</h3>
+	
+		<article id="post-384" class="post-384 post type-post status-publish format-standard hentry category-arduino category-embedded-system category-wireless tag-arduino tag-arduino-gsm-connection tag-arduino-uno tag-elementz tag-gsm tag-gsm-interfacing-arduino tag-uno">
+
+			
+			<header class="entry-header">
+				<h3 class="entry-title"><a href="https://elementztechblog.wordpress.com/2014/10/10/interfacing-sim900a-gsm-modem-with-arduino/" rel="bookmark">Interfacing SIM900A GSM Modem with Arduino</a></h3>
+			</header><!-- .entry-header -->
+
+		</article>
+
+	
+		<article id="post-1456" class="post-1456 post type-post status-publish format-standard has-post-thumbnail hentry category-arduino category-embedded-system category-uncategorized tag-arduino tag-arduino-gsm-connection tag-arduino-sim800-connection tag-arduino-uno tag-gsm-interfacing-arduino tag-gsm-modem tag-gsm-modem-testing tag-sim800 tag-software-serial-arduino tag-software-serial-gsm-modem">
+
+						<div class="entry-thumbnail">
+				<a href="https://elementztechblog.wordpress.com/2016/06/28/interfacing-sim800-gsm-modem-with-arduino/"><img width="50" height="50" src="./IBeacon using HM10 BLE module _ Random Codes - Elementz Tech Blog_files/c360_2016-06-28-12-05-18-513.jpg" class="attachment-expound-mini size-expound-mini wp-post-image" alt="" srcset="https://elementztechblog.files.wordpress.com/2016/06/c360_2016-06-28-12-05-18-513.jpg?w=50&amp;h=50&amp;crop=1 50w, https://elementztechblog.files.wordpress.com/2016/06/c360_2016-06-28-12-05-18-513.jpg?w=100&amp;h=100&amp;crop=1 100w" sizes="(max-width: 50px) 100vw, 50px" data-attachment-id="1544" data-permalink="https://elementztechblog.wordpress.com/2016/06/28/interfacing-sim800-gsm-modem-with-arduino/c360_2016-06-28-12-05-18-513/" data-orig-file="https://elementztechblog.files.wordpress.com/2016/06/c360_2016-06-28-12-05-18-513.jpg" data-orig-size="3366,2228" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;2.2&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;Play8X-1100&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;1467115518&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;3.5&quot;,&quot;iso&quot;:&quot;51&quot;,&quot;shutter_speed&quot;:&quot;0.005632&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;1&quot;}" data-image-title="C360_2016-06-28-12-05-18-513" data-image-description="" data-medium-file="https://elementztechblog.files.wordpress.com/2016/06/c360_2016-06-28-12-05-18-513.jpg?w=300" data-large-file="https://elementztechblog.files.wordpress.com/2016/06/c360_2016-06-28-12-05-18-513.jpg?w=700"></a>
+			</div>
+			
+			<header class="entry-header">
+				<h3 class="entry-title"><a href="https://elementztechblog.wordpress.com/2016/06/28/interfacing-sim800-gsm-modem-with-arduino/" rel="bookmark">Interfacing SIM800 GSM Modem with Arduino</a></h3>
+			</header><!-- .entry-header -->
+
+		</article>
+
+	
+		<article id="post-543" class="post-543 post type-post status-publish format-standard hentry category-arduino category-embedded-system category-wireless tag-arduino tag-arduino-wifi tag-esp8266 tag-esp8266-interfacing tag-uno-r3 tag-wireless">
+
+			
+			<header class="entry-header">
+				<h3 class="entry-title"><a href="https://elementztechblog.wordpress.com/2015/05/13/esp8266-based-temperature-data-logger-using-arduino/" rel="bookmark">ESP8266 based Temperature Data logger using Arduino</a></h3>
+			</header><!-- .entry-header -->
+
+		</article>
+
+	</div>
+
+				<nav role="navigation" id="nav-below" class="navigation-post">
+		<h1 class="screen-reader-text">Post navigation</h1>
+
+	
+		<div class="nav-previous"><a href="https://elementztechblog.wordpress.com/2017/02/01/sim800-vs-sim900-what-is-the-differencesimilarities/" rel="prev"><span class="meta-nav">←</span> SIM800 vs SIM900: What is the difference/Similarities?</a></div>		<div class="nav-next"><a href="https://elementztechblog.wordpress.com/2017/03/29/flashing-firmware-in-esp-wroom-32-breakout-module/" rel="next">Flashing Firmware in ESP-WROOM-32 Breakout Module <span class="meta-nav">→</span></a></div>
+	
+	</nav><!-- #nav-below -->
+	
+			
+	<div id="comments" class="comments-area">
+
+	
+	
+	
+		<div id="respond" class="comment-respond js">
+		<h3 id="reply-title" class="comment-reply-title">Leave a Reply <small><a rel="nofollow" id="cancel-comment-reply-link" href="https://elementztechblog.wordpress.com/2017/03/23/ibeacon-using-hm10-ble-module/#respond" style="display:none;">Cancel reply</a></small></h3>			<form action="https://elementztechblog.wordpress.com/wp-comments-post.php" method="post" id="commentform" class="comment-form">
+				<input type="hidden" id="highlander_comment_nonce" name="highlander_comment_nonce" value="1531007c51"><input type="hidden" name="_wp_http_referer" value="/2017/03/23/ibeacon-using-hm10-ble-module/">
+<input type="hidden" name="hc_post_as" id="hc_post_as" value="wordpress">
+
+<div class="comment-form-field comment-textarea">
+	
+	<div id="comment-form-comment"><textarea tabindex="-1" style="position: absolute; top: -999px; left: 0px; right: auto; bottom: auto; border: 0px; padding: 0px; box-sizing: content-box; overflow-wrap: break-word; overflow: hidden; transition: none 0s ease 0s; height: 0px !important; min-height: 0px !important; font-family: Arial, Helvetica, Tahoma, Verdana, sans-serif; font-size: 14px; font-weight: 400; font-style: normal; letter-spacing: 0px; text-transform: none; text-decoration: none solid rgba(0, 0, 0, 0.7); word-spacing: 0px; text-indent: 0px; line-height: 20px; width: 678px;" class="autosizejs "></textarea><textarea id="comment" name="comment" title="Enter your comment here..." placeholder="Enter your comment here..." style="height: 40px; overflow: hidden; overflow-wrap: break-word; resize: none;"></textarea></div>
+</div>
+
+<div id="comment-form-identity" style="display: none;">
+	<div id="comment-form-nascar" style="display: none;">
+		<p>Fill in your details below or click an icon to log in:</p>
+		<ul>
+			<li style="display:none;">
+				<a href="https://elementztechblog.wordpress.com/2017/03/23/ibeacon-using-hm10-ble-module/#comment-form-guest" id="postas-guest" class="nascar-signin-link" title="Login via Guest">
+									</a>
+			</li>
+			<li class="selected">
+				<a href="https://elementztechblog.wordpress.com/2017/03/23/ibeacon-using-hm10-ble-module/#comment-form-load-service:WordPress.com" id="postas-wordpress" class="nascar-signin-link" title="Login via WordPress.com">
+					<svg xmlns="http://www.w3.org/2000/svg" role="presentation" viewBox="0 0 24 24"><rect x="0" fill="none" width="24" height="24"></rect><g><path fill="#0087be" d="M12.158 12.786l-2.698 7.84c.806.236 1.657.365 2.54.365 1.047 0 2.05-.18 2.986-.51-.024-.037-.046-.078-.065-.123l-2.762-7.57zM3.008 12c0 3.56 2.07 6.634 5.068 8.092L3.788 8.342c-.5 1.117-.78 2.354-.78 3.658zm15.06-.454c0-1.112-.398-1.88-.74-2.48-.456-.74-.883-1.368-.883-2.11 0-.825.627-1.595 1.51-1.595.04 0 .078.006.116.008-1.598-1.464-3.73-2.36-6.07-2.36-3.14 0-5.904 1.613-7.512 4.053.21.008.41.012.58.012.94 0 2.395-.114 2.395-.114.484-.028.54.684.057.74 0 0-.487.058-1.03.086l3.275 9.74 1.968-5.902-1.4-3.838c-.485-.028-.944-.085-.944-.085-.486-.03-.43-.77.056-.742 0 0 1.484.114 2.368.114.94 0 2.397-.114 2.397-.114.486-.028.543.684.058.74 0 0-.488.058-1.03.086l3.25 9.665.897-2.997c.456-1.17.684-2.137.684-2.907zm1.82-3.86c.04.286.06.593.06.924 0 .912-.17 1.938-.683 3.22l-2.746 7.94c2.672-1.558 4.47-4.454 4.47-7.77 0-1.564-.4-3.033-1.1-4.314zM12 22C6.486 22 2 17.514 2 12S6.486 2 12 2s10 4.486 10 10-4.486 10-10 10z"></path></g></svg>				</a>
+			</li>
+			<li>
+			<iframe id="googleplus-sign-in" name="googleplus-sign-in" src="./IBeacon using HM10 BLE module _ Random Codes - Elementz Tech Blog_files/saved_resource(9).html" width="24" height="24" scrolling="no" allowtransparency="true" seamless="seamless" frameborder="0"></iframe>
+			</li>
+			<li>
+				<a href="https://elementztechblog.wordpress.com/2017/03/23/ibeacon-using-hm10-ble-module/#comment-form-load-service:Twitter" id="postas-twitter" class="nascar-signin-link" title="Login via Twitter">
+					<svg xmlns="http://www.w3.org/2000/svg" role="presentation" viewBox="0 0 24 24"><rect x="0" fill="none" width="24" height="24"></rect><g><path fill="#1DA1F2" d="M22.23 5.924c-.736.326-1.527.547-2.357.646.847-.508 1.498-1.312 1.804-2.27-.793.47-1.67.812-2.606.996C18.325 4.498 17.258 4 16.078 4c-2.266 0-4.103 1.837-4.103 4.103 0 .322.036.635.106.935-3.41-.17-6.433-1.804-8.457-4.287-.353.607-.556 1.312-.556 2.064 0 1.424.724 2.68 1.825 3.415-.673-.022-1.305-.207-1.86-.514v.052c0 1.988 1.415 3.647 3.293 4.023-.344.095-.707.145-1.08.145-.265 0-.522-.026-.773-.074.522 1.63 2.038 2.817 3.833 2.85-1.404 1.1-3.174 1.757-5.096 1.757-.332 0-.66-.02-.98-.057 1.816 1.164 3.973 1.843 6.29 1.843 7.547 0 11.675-6.252 11.675-11.675 0-.178-.004-.355-.012-.53.802-.578 1.497-1.3 2.047-2.124z"></path></g></svg>				</a>
+			</li>
+			<li>
+				<a href="https://elementztechblog.wordpress.com/2017/03/23/ibeacon-using-hm10-ble-module/#comment-form-load-service:Facebook" id="postas-facebook" class="nascar-signin-link" title="Login via Facebook">
+					<svg xmlns="http://www.w3.org/2000/svg" role="presentation" viewBox="0 0 24 24"><rect x="0" fill="none" width="24" height="24"></rect><g><path fill="#3B5998" d="M20.007 3H3.993C3.445 3 3 3.445 3 3.993v16.013c0 .55.445.994.993.994h8.62v-6.97H10.27V11.31h2.346V9.31c0-2.325 1.42-3.59 3.494-3.59.993 0 1.847.073 2.096.106v2.43h-1.438c-1.128 0-1.346.537-1.346 1.324v1.734h2.69l-.35 2.717h-2.34V21h4.587c.548 0 .993-.445.993-.993V3.993c0-.548-.445-.993-.993-.993z"></path></g></svg>				</a>
+			</li>
+		</ul>
+	</div>
+
+	<div id="comment-form-guest" class="comment-form-service" style="">
+		<div class="comment-form-padder">
+			<div class="comment-form-avatar">
+<a href="https://gravatar.com/site/signup/" target="_blank">				<img src="./IBeacon using HM10 BLE module _ Random Codes - Elementz Tech Blog_files/ad516503a11cd5ca435acc9bb6523536" alt="Gravatar" width="25" class="no-grav">
+</a>			</div>
+
+				<div class="comment-form-fields">
+				<div class="comment-form-field comment-form-email">
+					<label for="email">Email <span class="required">(required)</span> <span class="nopublish">(Address never made public)</span></label>
+					<div class="comment-form-input"><input id="email" name="email" type="email" value=""></div>
+				</div>
+				<div class="comment-form-field comment-form-author">
+					<label for="author">Name <span class="required">(required)</span></label>
+					<div class="comment-form-input"><input id="author" name="author" type="text" value=""></div>
+				</div>
+				<div class="comment-form-field comment-form-url">
+					<label for="url">Website</label>
+					<div class="comment-form-input"><input id="url" name="url" type="url" value=""></div>
+				</div>
+			</div>
+			
+		</div>
+	</div>
+
+	<div id="comment-form-wordpress" class="comment-form-service selected">
+		<div class="comment-form-padder">
+			<div class="comment-form-avatar">
+				<img src="./IBeacon using HM10 BLE module _ Random Codes - Elementz Tech Blog_files/abdd45f02257965ec95b8ac575193c64(1).jpeg" alt="Gravatar" width="25" class="no-grav">
+			</div>
+
+				<div class="comment-form-fields">
+				<input type="hidden" name="wp_avatar" id="wordpress-avatar" class="comment-meta-wordpress" value="https://1.gravatar.com/avatar/abdd45f02257965ec95b8ac575193c64?s=25&amp;d=https%3A%2F%2Fs2.wp.com%2Fwp-content%2Fmu-plugins%2Fhighlander-comments%2Fimages%2Fwplogo.png&amp;r=G">
+				<input type="hidden" name="wp_user_id" id="wordpress-user_id" class="comment-meta-wordpress" value="13338597">
+				<input type="hidden" name="wp_access_token" id="wordpress-access_token" class="comment-meta-wordpress" value="a328c79ca958cf84c09207e00025064d1c0d36d4">
+						<p class="comment-form-posting-as pa-wordpress">
+			<strong>handiko:</strong>
+			You are commenting using your WordPress.com account.			<span class="comment-form-log-out">
+				(&nbsp;<a href="javascript:HighlanderComments.doExternalLogout( &#39;wordpress&#39; );">Log&nbsp;Out</a>&nbsp;/&nbsp;
+				<a href="https://elementztechblog.wordpress.com/2017/03/23/ibeacon-using-hm10-ble-module/#" onclick="javascript:HighlanderComments.switchAccount();return false;">Change</a>&nbsp;)
+			</span>
+			<span class="pa-icon"><svg xmlns="http://www.w3.org/2000/svg" role="presentation" viewBox="0 0 24 24"><rect x="0" fill="none" width="24" height="24"></rect><g><path fill="#0087be" d="M12.158 12.786l-2.698 7.84c.806.236 1.657.365 2.54.365 1.047 0 2.05-.18 2.986-.51-.024-.037-.046-.078-.065-.123l-2.762-7.57zM3.008 12c0 3.56 2.07 6.634 5.068 8.092L3.788 8.342c-.5 1.117-.78 2.354-.78 3.658zm15.06-.454c0-1.112-.398-1.88-.74-2.48-.456-.74-.883-1.368-.883-2.11 0-.825.627-1.595 1.51-1.595.04 0 .078.006.116.008-1.598-1.464-3.73-2.36-6.07-2.36-3.14 0-5.904 1.613-7.512 4.053.21.008.41.012.58.012.94 0 2.395-.114 2.395-.114.484-.028.54.684.057.74 0 0-.487.058-1.03.086l3.275 9.74 1.968-5.902-1.4-3.838c-.485-.028-.944-.085-.944-.085-.486-.03-.43-.77.056-.742 0 0 1.484.114 2.368.114.94 0 2.397-.114 2.397-.114.486-.028.543.684.058.74 0 0-.488.058-1.03.086l3.25 9.665.897-2.997c.456-1.17.684-2.137.684-2.907zm1.82-3.86c.04.286.06.593.06.924 0 .912-.17 1.938-.683 3.22l-2.746 7.94c2.672-1.558 4.47-4.454 4.47-7.77 0-1.564-.4-3.033-1.1-4.314zM12 22C6.486 22 2 17.514 2 12S6.486 2 12 2s10 4.486 10 10-4.486 10-10 10z"></path></g></svg></span>
+		</p>
+					</div>
+	
+		</div>
+	</div>
+
+	<div id="comment-form-googleplus" class="comment-form-service">
+		<div class="comment-form-padder">
+			<div class="comment-form-avatar">
+				<img src="./IBeacon using HM10 BLE module _ Random Codes - Elementz Tech Blog_files/ad516503a11cd5ca435acc9bb6523536" alt="Google+ photo" width="25" class="no-grav">
+			</div>
+
+				<div class="comment-form-fields">
+				<input type="hidden" name="googleplus_avatar" id="googleplus-avatar" class="comment-meta-googleplus" value="">
+				<input type="hidden" name="googleplus_user_id" id="googleplus-user_id" class="comment-meta-googleplus" value="">
+				<input type="hidden" name="googleplus_access_token" id="googleplus-access_token" class="comment-meta-googleplus" value="">
+						<p class="comment-form-posting-as pa-googleplus">
+			<strong></strong>
+			You are commenting using your Google+ account.			<span class="comment-form-log-out">
+				(&nbsp;<a href="javascript:HighlanderComments.doExternalLogout( &#39;googleplus&#39; );">Log&nbsp;Out</a>&nbsp;/&nbsp;
+				<a href="https://elementztechblog.wordpress.com/2017/03/23/ibeacon-using-hm10-ble-module/#" onclick="javascript:HighlanderComments.switchAccount();return false;">Change</a>&nbsp;)
+			</span>
+			<span class="pa-icon"><svg xmlns="http://www.w3.org/2000/svg" role="presentation" x="0px" y="0px" viewBox="0 0 60 60"><path fill="#519bf7" d="M56.3,30c0,-1.6 -0.2,-3.4 -0.6,-5h-3.1H42.2H30v10.6h14.8C44,39.3 42,42 39.1,43.9l8.8,6.8C53,46 56.3,39 56.3,30z"></path><path fill="#3db366" d="M30,57.5c6.7,0 13.1,-2.4 17.9,-6.8l-8.8,-6.8c-2.5,1.6 -5.6,2.4 -9.1,2.4c-7.2,0 -13.3,-4.7 -15.4,-11.2l-9.3,7.1C9.8,51.3 19.1,57.5 30,57.5z"></path><path fill="#fdc600" d="M5.3,42.2l9.3,-7.1c-0.5,-1.6 -0.8,-3.3 -0.8,-5.1s0.3,-3.5 0.8,-5.1l-9.3,-7.1C3.5,21.5 2.5,25.6 2.5,30S3.5,38.5 5.3,42.2z"></path><path fill="#f15b44" d="M40.1,17.4l8,-8C43.3,5.1 37,2.5 30,2.5C19.1,2.5 9.8,8.7 5.3,17.8l9.3,7.1c2.1,-6.5 8.2,-11.1 15.4,-11.1C33.9,13.7 37.4,15.1 40.1,17.4z"></path></svg></span>
+		</p>
+					</div>
+	
+		</div>
+	</div>
+
+	<div id="comment-form-twitter" class="comment-form-service">
+		<div class="comment-form-padder">
+			<div class="comment-form-avatar">
+				<img src="./IBeacon using HM10 BLE module _ Random Codes - Elementz Tech Blog_files/ad516503a11cd5ca435acc9bb6523536" alt="Twitter picture" width="25" class="no-grav">
+			</div>
+
+				<div class="comment-form-fields">
+				<input type="hidden" name="twitter_avatar" id="twitter-avatar" class="comment-meta-twitter" value="">
+				<input type="hidden" name="twitter_user_id" id="twitter-user_id" class="comment-meta-twitter" value="">
+				<input type="hidden" name="twitter_access_token" id="twitter-access_token" class="comment-meta-twitter" value="">
+						<p class="comment-form-posting-as pa-twitter">
+			<strong></strong>
+			You are commenting using your Twitter account.			<span class="comment-form-log-out">
+				(&nbsp;<a href="javascript:HighlanderComments.doExternalLogout( &#39;twitter&#39; );">Log&nbsp;Out</a>&nbsp;/&nbsp;
+				<a href="https://elementztechblog.wordpress.com/2017/03/23/ibeacon-using-hm10-ble-module/#" onclick="javascript:HighlanderComments.switchAccount();return false;">Change</a>&nbsp;)
+			</span>
+			<span class="pa-icon"><svg xmlns="http://www.w3.org/2000/svg" role="presentation" viewBox="0 0 24 24"><rect x="0" fill="none" width="24" height="24"></rect><g><path fill="#1DA1F2" d="M22.23 5.924c-.736.326-1.527.547-2.357.646.847-.508 1.498-1.312 1.804-2.27-.793.47-1.67.812-2.606.996C18.325 4.498 17.258 4 16.078 4c-2.266 0-4.103 1.837-4.103 4.103 0 .322.036.635.106.935-3.41-.17-6.433-1.804-8.457-4.287-.353.607-.556 1.312-.556 2.064 0 1.424.724 2.68 1.825 3.415-.673-.022-1.305-.207-1.86-.514v.052c0 1.988 1.415 3.647 3.293 4.023-.344.095-.707.145-1.08.145-.265 0-.522-.026-.773-.074.522 1.63 2.038 2.817 3.833 2.85-1.404 1.1-3.174 1.757-5.096 1.757-.332 0-.66-.02-.98-.057 1.816 1.164 3.973 1.843 6.29 1.843 7.547 0 11.675-6.252 11.675-11.675 0-.178-.004-.355-.012-.53.802-.578 1.497-1.3 2.047-2.124z"></path></g></svg></span>
+		</p>
+					</div>
+	
+		</div>
+	</div>
+
+	<div id="comment-form-facebook" class="comment-form-service">
+		<div class="comment-form-padder">
+			<div class="comment-form-avatar">
+				<img src="./IBeacon using HM10 BLE module _ Random Codes - Elementz Tech Blog_files/ad516503a11cd5ca435acc9bb6523536" alt="Facebook photo" width="25" class="no-grav">
+			</div>
+
+				<div class="comment-form-fields">
+				<input type="hidden" name="fb_avatar" id="facebook-avatar" class="comment-meta-facebook" value="">
+				<input type="hidden" name="fb_user_id" id="facebook-user_id" class="comment-meta-facebook" value="">
+				<input type="hidden" name="fb_access_token" id="facebook-access_token" class="comment-meta-facebook" value="">
+						<p class="comment-form-posting-as pa-facebook">
+			<strong></strong>
+			You are commenting using your Facebook account.			<span class="comment-form-log-out">
+				(&nbsp;<a href="javascript:HighlanderComments.doExternalLogout( &#39;facebook&#39; );">Log&nbsp;Out</a>&nbsp;/&nbsp;
+				<a href="https://elementztechblog.wordpress.com/2017/03/23/ibeacon-using-hm10-ble-module/#" onclick="javascript:HighlanderComments.switchAccount();return false;">Change</a>&nbsp;)
+			</span>
+			<span class="pa-icon"><svg xmlns="http://www.w3.org/2000/svg" role="presentation" viewBox="0 0 24 24"><rect x="0" fill="none" width="24" height="24"></rect><g><path fill="#3B5998" d="M20.007 3H3.993C3.445 3 3 3.445 3 3.993v16.013c0 .55.445.994.993.994h8.62v-6.97H10.27V11.31h2.346V9.31c0-2.325 1.42-3.59 3.494-3.59.993 0 1.847.073 2.096.106v2.43h-1.438c-1.128 0-1.346.537-1.346 1.324v1.734h2.69l-.35 2.717h-2.34V21h4.587c.548 0 .993-.445.993-.993V3.993c0-.548-.445-.993-.993-.993z"></path></g></svg></span>
+		</p>
+					</div>
+	
+		</div>
+	</div>
+
+
+	<div id="comment-form-load-service" class="comment-form-service">
+		<div class="comment-form-posting-as-cancel"><a href="javascript:HighlanderComments.cancelExternalWindow();">Cancel</a></div>
+		<p>Connecting to %s</p>
+	</div>
+
+</div>
+
+<script type="text/javascript">
+var highlander_expando_javascript = function(){
+	var input = document.createElement( 'input' ),
+	    comment = jQuery( '#comment' );
+
+	if ( 'placeholder' in input ) {
+		comment.attr( 'placeholder', jQuery( '.comment-textarea label' ).remove().text() );
+	}
+
+	// Expando Mode: start small, then auto-resize on first click + text length
+	jQuery( '#comment-form-identity' ).hide();
+	jQuery( '#comment-form-subscribe' ).hide();
+	jQuery( '#commentform .form-submit' ).hide();
+
+	comment.css( { 'height':'10px' } ).one( 'focus', function() {
+		var timer = setInterval( HighlanderComments.resizeCallback, 10 )
+		jQuery( this ).animate( { 'height': HighlanderComments.initialHeight } ).delay( 100 ).queue( function(n) { clearInterval( timer ); HighlanderComments.resizeCallback(); n(); } );
+		jQuery( '#comment-form-identity' ).slideDown();
+		jQuery( '#comment-form-subscribe' ).slideDown();
+		jQuery( '#commentform .form-submit' ).slideDown();
+	});
+}
+jQuery(document).ready( highlander_expando_javascript );
+</script>
+
+<div id="comment-form-subscribe" style="display: none;">
+	<p class="comment-subscription-form"><input type="checkbox" name="subscribe" id="subscribe" value="subscribe" style="width: auto;"> <label class="subscribe-label" id="subscribe-label" for="subscribe" style="display: inline;">Notify me of new comments via email.</label></p></div>
+
+<p class="form-submit" style="display: none;"><input name="submit" type="submit" id="comment-submit" class="submit" value="Post Comment"> <input type="hidden" name="comment_post_ID" value="3256" id="comment_post_ID">
+<input type="hidden" name="comment_parent" id="comment_parent" value="0">
+</p><p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="8162313802"></p>
+<input type="hidden" name="genseq" value="1544159647">
+<p style="display: none;"></p>			<input type="hidden" id="ak_js" name="ak_js" value="1544159657158"></form>
+			</div><!-- #respond -->
+	<div style="clear: both"></div>
+</div><!-- #comments -->
+
+		
+		</div><!-- #content -->
+	</div><!-- #primary -->
+
+	<div id="secondary" class="widget-area" role="complementary">
+				<aside id="text-3" class="widget widget_text"><h1 class="widget-title">Top Arduino Blog</h1>			<div class="textwidget"><a href="http://blog.feedspot.com/arduino_blogs/" title="Arduino blogs"><img src="./IBeacon using HM10 BLE module _ Random Codes - Elementz Tech Blog_files/Arduino-transparent_216px.png"></a>
+</div>
+		</aside><aside id="search-2" class="widget widget_search">	<form method="get" id="searchform" class="searchform" action="https://elementztechblog.wordpress.com/" role="search">
+		<label for="s" class="screen-reader-text">Search</label>
+		<input type="search" class="field" name="s" value="" id="s" placeholder="Search …">
+		<input type="submit" class="submit" id="searchsubmit" value="Search">
+	</form>
+</aside><aside id="facebook-likebox-2" class="widget widget_facebook_likebox">		<div id="fb-root" class=" fb_reset"><div style="position: absolute; top: -10000px; height: 0px; width: 0px;"><div><iframe name="fb_xdm_frame_https" frameborder="0" allowtransparency="true" allowfullscreen="true" scrolling="no" allow="encrypted-media" id="fb_xdm_frame_https" aria-hidden="true" title="Facebook Cross Domain Communication Frame" tabindex="-1" src="./IBeacon using HM10 BLE module _ Random Codes - Elementz Tech Blog_files/LviKjJ9cymB.html" style="border: none;"></iframe></div></div><div style="position: absolute; top: -10000px; height: 0px; width: 0px;"><div></div></div></div>
+		<div class="fb-page fb_iframe_widget" data-href="https://www.facebook.com/ElementzOnline" data-width="200" data-height="200" data-hide-cover="false" data-show-facepile="true" data-show-posts="false" fb-xfbml-state="rendered" fb-iframe-plugin-query="app_id=249643311490&amp;container_width=220&amp;height=200&amp;hide_cover=false&amp;href=https%3A%2F%2Fwww.facebook.com%2FElementzOnline&amp;locale=en_US&amp;sdk=joey&amp;show_facepile=true&amp;show_posts=false&amp;width=200"><span style="vertical-align: bottom; width: 200px; height: 197px;"><iframe name="fed2edae4633fc" width="200px" height="200px" frameborder="0" allowtransparency="true" allowfullscreen="true" scrolling="no" allow="encrypted-media" title="fb:page Facebook Social Plugin" src="./IBeacon using HM10 BLE module _ Random Codes - Elementz Tech Blog_files/page.html" style="border: none; visibility: visible; width: 200px; height: 197px;" class=""></iframe></span></div>
+		</aside><aside id="categories-2" class="widget widget_categories"><h1 class="widget-title">Categories</h1>		<ul>
+				<li class="cat-item cat-item-134289"><a href="https://elementztechblog.wordpress.com/category/arduino/" title="Contains Arduino sample codes, libraries and connection diagrams for various sensors and modules.">Arduino</a>
+</li>
+	<li class="cat-item cat-item-593995279"><a href="https://elementztechblog.wordpress.com/category/arduino-compatible-nrf/">arduino compatible nrf</a>
+</li>
+	<li class="cat-item cat-item-1319121"><a href="https://elementztechblog.wordpress.com/category/avr/atmega/">ATMEGA</a>
+</li>
+	<li class="cat-item cat-item-484647"><a href="https://elementztechblog.wordpress.com/category/avr/">AVR</a>
+</li>
+	<li class="cat-item cat-item-114929"><a href="https://elementztechblog.wordpress.com/category/embedded-system/embedded-linux/" title="Contains posts on introduction to embedded linux and how to use various linux distros in your favourite boards.">Embedded Linux</a>
+</li>
+	<li class="cat-item cat-item-10688"><a href="https://elementztechblog.wordpress.com/category/embedded-system/" title="Contains embedded related, mostly microcontroller, or arm based platform.">Embedded System</a>
+</li>
+	<li class="cat-item cat-item-261694453"><a href="https://elementztechblog.wordpress.com/category/esp8266/">ESP8266</a>
+</li>
+	<li class="cat-item cat-item-3169"><a href="https://elementztechblog.wordpress.com/category/gps/">GPS</a>
+</li>
+	<li class="cat-item cat-item-610"><a href="https://elementztechblog.wordpress.com/category/linux/">Linux</a>
+</li>
+	<li class="cat-item cat-item-595899907"><a href="https://elementztechblog.wordpress.com/category/arduino/m2m-linker/">M2M Linker</a>
+</li>
+	<li class="cat-item cat-item-7770"><a href="https://elementztechblog.wordpress.com/category/matlab/">Matlab</a>
+</li>
+	<li class="cat-item cat-item-2897371"><a href="https://elementztechblog.wordpress.com/category/nrf/">nrf</a>
+</li>
+	<li class="cat-item cat-item-593995213"><a href="https://elementztechblog.wordpress.com/category/nrf-xigbee/">nrf xigbee</a>
+</li>
+	<li class="cat-item cat-item-593995248"><a href="https://elementztechblog.wordpress.com/category/nrf-xigbee-with-base-board/">nrf xigbee with base board</a>
+</li>
+	<li class="cat-item cat-item-832"><a href="https://elementztechblog.wordpress.com/category/linux/python/">Python</a>
+</li>
+	<li class="cat-item cat-item-69218551"><a href="https://elementztechblog.wordpress.com/category/raspberry-pi-2/" title="Contains Raspberry Pi sample codes, libraries and connection diagrams for various sensors and modules.">Raspberry Pi</a>
+</li>
+	<li class="cat-item cat-item-53308"><a href="https://elementztechblog.wordpress.com/category/embedded-system/sensors/">Sensors</a>
+</li>
+	<li class="cat-item cat-item-288739948"><a href="https://elementztechblog.wordpress.com/category/sim800/">sim800</a>
+</li>
+	<li class="cat-item cat-item-355125077"><a href="https://elementztechblog.wordpress.com/category/sim800/sim808/">sim808</a>
+</li>
+	<li class="cat-item cat-item-1"><a href="https://elementztechblog.wordpress.com/category/uncategorized/">Uncategorized</a>
+</li>
+	<li class="cat-item cat-item-10266"><a href="https://elementztechblog.wordpress.com/category/embedded-system/utilities/">Utilities</a>
+</li>
+	<li class="cat-item cat-item-355"><a href="https://elementztechblog.wordpress.com/category/embedded-system/wireless/" title="Wireless contain discussions on wireless technologies, or hardware modules such zigbee, Tarang, Xbee, CC2500, Wifi, Bluetooth etc. ">Wireless</a>
+</li>
+	<li class="cat-item cat-item-97956390"><a href="https://elementztechblog.wordpress.com/category/wireless-data-communications/">wireless data communications</a>
+</li>
+	<li class="cat-item cat-item-169273816"><a href="https://elementztechblog.wordpress.com/category/xigbee/">XigBee</a>
+</li>
+	<li class="cat-item cat-item-593995183"><a href="https://elementztechblog.wordpress.com/category/xigbee-module/">xigbee module</a>
+</li>
+		</ul>
+			</aside>		<aside id="recent-posts-2" class="widget widget_recent_entries">		<h1 class="widget-title">Recent Posts</h1>		<ul>
+											<li>
+					<a href="https://elementztechblog.wordpress.com/2018/07/15/using-jtag-for-avr-development-with-ubuntu-18-04-new-os-releases/">Using JTAG for AVR development with Ubuntu 18.04 (new OS releases)</a>
+									</li>
+											<li>
+					<a href="https://elementztechblog.wordpress.com/2018/06/05/lora-ultimate-range-test-guide/">LoRA – Ultimate range test guide</a>
+									</li>
+											<li>
+					<a href="https://elementztechblog.wordpress.com/2018/04/04/lcd-serial-interface-board-an-introduction-to-at-commands-interfacing-with-micro-controller/">LCD Serial Interface Board: An Introduction to AT commands &amp; Interfacing with micro-controller..</a>
+									</li>
+											<li>
+					<a href="https://elementztechblog.wordpress.com/2018/03/13/xigbee-in-broadcast-configuration/">XigBee in Broadcast Configuration</a>
+									</li>
+											<li>
+					<a href="https://elementztechblog.wordpress.com/2018/01/02/how-to-interface-temperature-sensorlm35-in-atmega-16-32/">How to Interface Temperature Sensor(LM35) in ATmega 16/32</a>
+									</li>
+					</ul>
+		</aside><aside id="recent-comments-2" class="widget widget_recent_comments"><h1 class="widget-title">Recent Comments</h1>				<table class="recentcommentsavatar" cellspacing="0" cellpadding="0" border="0">
+					<tbody><tr><td title="elementzonline" class="recentcommentsavatartop" style="height:48px; width:48px;"><a href="https://elementztechblog.wordpress.com/" rel="nofollow"><img alt="" src="./IBeacon using HM10 BLE module _ Random Codes - Elementz Tech Blog_files/87a20743852023ba734bbe228f2ead77" class="avatar avatar-48 grav-hashed" height="48" width="48" id="grav-87a20743852023ba734bbe228f2ead77-0"></a></td><td class="recentcommentstexttop" style=""><a href="https://elementztechblog.wordpress.com/" rel="nofollow">elementzonline</a> on <a href="https://elementztechblog.wordpress.com/2018/07/15/using-jtag-for-avr-development-with-ubuntu-18-04-new-os-releases/comment-page-1/#comment-2322">Using JTAG for AVR development…</a></td></tr><tr><td title="JJ" class="recentcommentsavatarend" style="height:48px; width:48px;"><img alt="" src="./IBeacon using HM10 BLE module _ Random Codes - Elementz Tech Blog_files/8834d23977d4060d10b72c83ae41f6b9" class="avatar avatar-48 grav-hashed grav-hijack" height="48" width="48" id="grav-8834d23977d4060d10b72c83ae41f6b9-0"></td><td class="recentcommentstextend" style="">JJ on <a href="https://elementztechblog.wordpress.com/2018/07/15/using-jtag-for-avr-development-with-ubuntu-18-04-new-os-releases/comment-page-1/#comment-2321">Using JTAG for AVR development…</a></td></tr><tr><td title="elementzonline" class="recentcommentsavatarend" style="height:48px; width:48px;"><a href="https://elementztechblog.wordpress.com/" rel="nofollow"><img alt="" src="./IBeacon using HM10 BLE module _ Random Codes - Elementz Tech Blog_files/87a20743852023ba734bbe228f2ead77" class="avatar avatar-48 grav-hashed" height="48" width="48" id="grav-87a20743852023ba734bbe228f2ead77-1"></a></td><td class="recentcommentstextend" style=""><a href="https://elementztechblog.wordpress.com/" rel="nofollow">elementzonline</a> on <a href="https://elementztechblog.wordpress.com/2018/07/15/using-jtag-for-avr-development-with-ubuntu-18-04-new-os-releases/comment-page-1/#comment-2320">Using JTAG for AVR development…</a></td></tr><tr><td title="elementzonline" class="recentcommentsavatarend" style="height:48px; width:48px;"><a href="https://elementztechblog.wordpress.com/" rel="nofollow"><img alt="" src="./IBeacon using HM10 BLE module _ Random Codes - Elementz Tech Blog_files/87a20743852023ba734bbe228f2ead77" class="avatar avatar-48 grav-hashed" height="48" width="48" id="grav-87a20743852023ba734bbe228f2ead77-2"></a></td><td class="recentcommentstextend" style=""><a href="https://elementztechblog.wordpress.com/" rel="nofollow">elementzonline</a> on <a href="https://elementztechblog.wordpress.com/2018/07/15/using-jtag-for-avr-development-with-ubuntu-18-04-new-os-releases/comment-page-1/#comment-2319">Using JTAG for AVR development…</a></td></tr><tr><td title="JJ" class="recentcommentsavatarend" style="height:48px; width:48px;"><img alt="" src="./IBeacon using HM10 BLE module _ Random Codes - Elementz Tech Blog_files/8834d23977d4060d10b72c83ae41f6b9" class="avatar avatar-48 grav-hashed grav-hijack" height="48" width="48" id="grav-8834d23977d4060d10b72c83ae41f6b9-1"></td><td class="recentcommentstextend" style="">JJ on <a href="https://elementztechblog.wordpress.com/2018/07/15/using-jtag-for-avr-development-with-ubuntu-18-04-new-os-releases/comment-page-1/#comment-2313">Using JTAG for AVR development…</a></td></tr>				</tbody></table>
+				</aside><aside id="archives-2" class="widget widget_archive"><h1 class="widget-title">Archives</h1>		<ul>
+				<li><a href="https://elementztechblog.wordpress.com/2018/07/">July 2018</a></li>
+	<li><a href="https://elementztechblog.wordpress.com/2018/06/">June 2018</a></li>
+	<li><a href="https://elementztechblog.wordpress.com/2018/04/">April 2018</a></li>
+	<li><a href="https://elementztechblog.wordpress.com/2018/03/">March 2018</a></li>
+	<li><a href="https://elementztechblog.wordpress.com/2018/01/">January 2018</a></li>
+	<li><a href="https://elementztechblog.wordpress.com/2017/12/">December 2017</a></li>
+	<li><a href="https://elementztechblog.wordpress.com/2017/11/">November 2017</a></li>
+	<li><a href="https://elementztechblog.wordpress.com/2017/10/">October 2017</a></li>
+	<li><a href="https://elementztechblog.wordpress.com/2017/09/">September 2017</a></li>
+	<li><a href="https://elementztechblog.wordpress.com/2017/08/">August 2017</a></li>
+	<li><a href="https://elementztechblog.wordpress.com/2017/07/">July 2017</a></li>
+	<li><a href="https://elementztechblog.wordpress.com/2017/03/">March 2017</a></li>
+	<li><a href="https://elementztechblog.wordpress.com/2017/02/">February 2017</a></li>
+	<li><a href="https://elementztechblog.wordpress.com/2016/12/">December 2016</a></li>
+	<li><a href="https://elementztechblog.wordpress.com/2016/11/">November 2016</a></li>
+	<li><a href="https://elementztechblog.wordpress.com/2016/10/">October 2016</a></li>
+	<li><a href="https://elementztechblog.wordpress.com/2016/08/">August 2016</a></li>
+	<li><a href="https://elementztechblog.wordpress.com/2016/07/">July 2016</a></li>
+	<li><a href="https://elementztechblog.wordpress.com/2016/06/">June 2016</a></li>
+	<li><a href="https://elementztechblog.wordpress.com/2016/05/">May 2016</a></li>
+	<li><a href="https://elementztechblog.wordpress.com/2016/04/">April 2016</a></li>
+	<li><a href="https://elementztechblog.wordpress.com/2016/03/">March 2016</a></li>
+	<li><a href="https://elementztechblog.wordpress.com/2016/02/">February 2016</a></li>
+	<li><a href="https://elementztechblog.wordpress.com/2016/01/">January 2016</a></li>
+	<li><a href="https://elementztechblog.wordpress.com/2015/12/">December 2015</a></li>
+	<li><a href="https://elementztechblog.wordpress.com/2015/11/">November 2015</a></li>
+	<li><a href="https://elementztechblog.wordpress.com/2015/10/">October 2015</a></li>
+	<li><a href="https://elementztechblog.wordpress.com/2015/09/">September 2015</a></li>
+	<li><a href="https://elementztechblog.wordpress.com/2015/08/">August 2015</a></li>
+	<li><a href="https://elementztechblog.wordpress.com/2015/07/">July 2015</a></li>
+	<li><a href="https://elementztechblog.wordpress.com/2015/05/">May 2015</a></li>
+	<li><a href="https://elementztechblog.wordpress.com/2015/04/">April 2015</a></li>
+	<li><a href="https://elementztechblog.wordpress.com/2015/03/">March 2015</a></li>
+	<li><a href="https://elementztechblog.wordpress.com/2015/02/">February 2015</a></li>
+	<li><a href="https://elementztechblog.wordpress.com/2015/01/">January 2015</a></li>
+	<li><a href="https://elementztechblog.wordpress.com/2014/12/">December 2014</a></li>
+	<li><a href="https://elementztechblog.wordpress.com/2014/11/">November 2014</a></li>
+	<li><a href="https://elementztechblog.wordpress.com/2014/10/">October 2014</a></li>
+	<li><a href="https://elementztechblog.wordpress.com/2014/09/">September 2014</a></li>
+	<li><a href="https://elementztechblog.wordpress.com/2014/08/">August 2014</a></li>
+	<li><a href="https://elementztechblog.wordpress.com/2014/07/">July 2014</a></li>
+	<li><a href="https://elementztechblog.wordpress.com/2014/06/">June 2014</a></li>
+	<li><a href="https://elementztechblog.wordpress.com/2014/05/">May 2014</a></li>
+	<li><a href="https://elementztechblog.wordpress.com/2014/02/">February 2014</a></li>
+	<li><a href="https://elementztechblog.wordpress.com/2014/01/">January 2014</a></li>
+	<li><a href="https://elementztechblog.wordpress.com/2013/12/">December 2013</a></li>
+	<li><a href="https://elementztechblog.wordpress.com/2013/11/">November 2013</a></li>
+		</ul>
+			</aside><aside id="widget_contact_info-5" class="widget widget_contact_info"><h1 class="widget-title">Contact Us</h1><div itemscope="" itemtype="http://schema.org/LocalBusiness"><div class="contact-map-container"><iframe width="600" height="216" frameborder="0" src="./IBeacon using HM10 BLE module _ Random Codes - Elementz Tech Blog_files/place.html" class="contact-map"></iframe><div class="contact-map-distractor"></div></div><div class="confit-address" itemscope="" itemtype="http://schema.org/PostalAddress" itemprop="address"><a href="http://maps.google.com/maps?z=16&amp;q=elementz+engineers+guild+pvt.+ltd.+rema+plaza,+t.+c.+25/1655/5,,+ss+kovil+rd,+thampanoor,+thiruvananthapuram,+kerala+695001" target="_blank">Elementz Engineers Guild Pvt. Ltd.
+<br>Rema Plaza, T. C. 25/1655/5,, SS Kovil Rd, Thampanoor, Thiruvananthapuram, Kerala 695001</a></div><div class="confit-phone"><span itemprop="telephone">+91-471-6006699, +91-471-3106622, +91-9020616699, +91-9020716699</span></div><div class="confit-hours" itemprop="openingHours">Open on All Days from 10am to 8pm</div></div></aside>	</div><!-- #secondary -->
+	</div><!-- #main -->
+
+	<footer id="colophon" class="site-footer" role="contentinfo">
+		<div class="site-info">
+			<a href="https://wordpress.com/?ref=footer_website">Create a free website or blog at WordPress.com.</a>
+		</div><!-- .site-info -->
+	</footer><!-- #colophon -->
+</div><!-- #page -->
+
+<!--  -->
+	<script type="text/javascript">
+	/* <![CDATA[ */
+		jQuery(document).ready( function($) {
+			function doFollowingHover() {
+				$('#wp-admin-bar-follow > a').unbind( '.unfollow' );
+
+				$('#wp-admin-bar-follow > a').bind( 'mouseover.unfollow', function() {
+
+					$(this).html( "Unfollow" ).parent( 'li' ).addClass( 'unfollow' );
+				});
+				$('#wp-admin-bar-follow > a').bind( 'mouseout.unfollow', function() {
+					$(this).html( "Following" ).parent( 'li' ).removeClass( 'unfollow' );
+				});
+			}
+			
+			$('#wp-admin-bar-follow > a').click( function( e ) {
+				$('#wp-admin-bar-follow > a').unbind( '.unfollow' );
+
+				e.preventDefault();
+
+				var link = $( this ), li = $( '#wp-admin-bar-follow' ), timeout = 0;
+
+				if ( li.hasClass( 'subscribed' ) ) {
+					li.removeClass( 'subscribed' ).removeClass( 'unfollow' );
+					link.html( "Follow" );
+
+					$('body').append( $( 'div.wpcom-bubble' ).removeClass( 'fadein' ) ).off( 'click.bubble' );
+
+					var action = 'ab_unsubscribe_from_blog';
+				} else {
+					li.addClass( 'subscribed' ).removeClass( 'unfollow' );
+					link.html( "Following" );
+
+						var left = 131 - link.width();
+						li.append( $( 'div.wpcom-bubble' ).css( { left: '-' + left + 'px' } ) );
+						$( 'div.bubble-txt', 'div.wpcom-bubble' ).html( "New posts from this blog will now appear in <a target=\"_blank\" href=\"http:\/\/wordpress.com\/\">your reader<\/a>. You can manage email alerts from your <a target=\"_blank\" href=\"http:\/\/wordpress.com\/following\/edit\/\">subscriptions page<\/a>." );
+
+						$( 'div.wpcom-bubble.action-bubble' ).addClass( 'fadein' );
+
+						setTimeout( function() {
+							$('body').on( 'click.bubble touchstart.bubble', function(e) {
+								if ( !$(e.target).hasClass('wpcom-bubble') && !$(e.target).parents( 'div.wpcom-bubble' ).length )
+									hideBubble();
+							});
+							setTimeout( hideBubble, 15000 );
+						}, 500 );
+
+					var action = 'ab_subscribe_to_blog';
+					$('#wp-admin-bar-follow > a').bind( 'mouseout.shift', function() {
+						doFollowingHover();
+						$(this).unbind( '.shift' );
+					});
+				}
+
+				var nonce = link.attr( 'href' ).split( '_wpnonce=' );
+				nonce = nonce[1];
+
+				$.post( "https:\/\/elementztechblog.wordpress.com\/wp-admin\/admin-ajax.php", {
+					'action': action,
+					'_wpnonce': nonce,
+					'source': 'admin_bar',
+					'blog_id': 60730213				});
+			});
+		});
+	/* ]]> */
+	</script>
+<script type="text/javascript" src="./IBeacon using HM10 BLE module _ Random Codes - Elementz Tech Blog_files/gprofiles.js.download"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var WPGroHo = {"my_hash":"abdd45f02257965ec95b8ac575193c64"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./IBeacon using HM10 BLE module _ Random Codes - Elementz Tech Blog_files/wpgroho.js.download"></script>
+
+	<script>
+		//initialize and attach hovercards to all gravatars
+		jQuery( document ).ready( function( $ ) {
+
+			if (typeof Gravatar === "undefined"){
+				return;
+			}
+
+			if ( typeof Gravatar.init !== "function" ) {
+				return;
+			}			
+
+			Gravatar.profile_cb = function( hash, id ) {
+				WPGroHo.syncProfileData( hash, id );
+			};
+			Gravatar.my_hash = WPGroHo.my_hash;
+			Gravatar.init( 'body', '#wp-admin-bar-my-account' );
+		});
+	</script>
+
+		<div style="display:none">
+	<div class="grofile-hash-map-87a20743852023ba734bbe228f2ead77">
+	</div>
+	<div class="grofile-hash-map-8834d23977d4060d10b72c83ae41f6b9">
+	</div>
+	</div>
+
+	<div id="ab-reblog-box">
+		<form action="https://elementztechblog.wordpress.com/2017/03/23/ibeacon-using-hm10-ble-module/" name="reblog">
+			<textarea id="reblog-content" name="reblog-content" placeholder="Add your thoughts here... (optional)"></textarea>
+			<label for="blogid" id="lblogid">Post to</label>
+
+			<select name="to_blog_id" id="reblog-to-blog-id">
+														<option value="127915617">SDL Labs</option>
+														<option value="148427021">Code Notes</option>
+														<option value="150522841">New Life</option>
+														<option value="150714579">YD1SDL - The Signal Source</option>
+							</select>
+
+			<div class="submit">
+				<span class="canceltext"><a href="https://elementztechblog.wordpress.com/2017/03/23/ibeacon-using-hm10-ble-module/" class="cancel">Cancel</a></span>
+				<input type="submit" name="reblog-submit" class="button-primary" id="reblog-submit" value="Reblog Post">
+				<input type="hidden" id="original-blog-id" value="60730213">
+				<input type="hidden" id="original-post-id" value="3256">
+			</div>
+
+			<input type="hidden" id="_wpnonce" name="_wpnonce" value="a3957b1fe0"><input type="hidden" name="_wp_http_referer" value="/2017/03/23/ibeacon-using-hm10-ble-module/">		</form>
+
+		<div class="arrow"></div>
+	</div>
+
+	<script type="text/javascript">
+	var wpcom_reblog = {
+		request: false,
+		source: 'toolbar',
+
+		init: function() {
+			// Click reblog button on post
+			jQuery(document).on( 'click', '#wpadminbar .reblog', function(e) {
+				e.preventDefault();
+				wpcom_reblog.source = 'toolbar';
+
+				if ( jQuery( '#wpadminbar #ab-reblog-box' ).is( ':visible' ) ) {
+					wpcom_reblog.cancel_reblog();
+				}
+				else {
+					wpcom_reblog.show_reblog_box();
+				}
+			} );
+
+			// Clicked reblog button on already reblogged post.
+			jQuery(document).on( 'click', '#wpadminbar .reblogged', function(e) {
+				e.preventDefault();
+			});
+
+			// Click cancel reblog button
+			jQuery(document).on( 'click', '#ab-reblog-box a.cancel', function(e) {
+				e.preventDefault();
+				wpcom_reblog.cancel_reblog();
+			});
+
+			// Submit reblog box
+			jQuery(document).on( 'click', '#ab-reblog-box input[type=submit]', function(e) {
+				e.preventDefault();
+				wpcom_reblog.submit_reblog( jQuery(this) );
+			});
+		},
+
+		show_reblog_box: function() {
+			return this.show_reblog_box_here(
+				'#wp-admin-bar-wpr-reblog',
+				'#wpadminbar'
+			);
+		},
+
+		toggle_reblog_box_flair: function( obj_id ) {
+			if ( jQuery( '#jp-post-flair #ab-reblog-box' ).is( ':visible' ) ) {
+				wpcom_reblog.cancel_reblog();
+			}
+			else {
+				wpcom_reblog.show_reblog_box_flair( obj_id );
+			}
+		},
+
+		show_reblog_box_flair: function( obj_id ) {
+			this.source = 'post_flair';
+			this.obj_id = obj_id;
+			return this.show_reblog_box_here(
+				'.post-likes-widget',
+				'body'
+			);
+		},
+
+		show_reblog_box_here: function(anchorId, parentId) {
+			var jq = jQuery,
+			    $anchor = jq( anchorId ),
+			    $parent = jq( parentId ),
+			    $window = jq( window ),
+			    $scroll = jq('html, body'),
+			    $reblog_box = jq( '#ab-reblog-box' ),
+			    offset = $anchor.offset(),
+			    left = offset.left + 'px',
+			    width = '500px',
+			    position,
+			    top;
+
+			if ( $parent.css( 'position' ) === 'fixed' ) {
+				position = 'fixed';
+				top = $parent.position().top + $parent.outerHeight();
+			}
+			else {
+				position = 'absolute';
+				top = offset.top + $anchor.outerHeight() + 'px';
+			}
+			$reblog_box.remove();
+			$parent.append( $reblog_box );
+			$anchor.addClass( 'selected' );
+
+			if ( jq( window ).innerWidth() < offset.left + 500 ) {
+				// Most likely mobile or tablet
+				left = '0px';
+				width = ( jq( window ).innerWidth() - 24 ) + 'px';
+			}
+
+			$reblog_box
+				.find('p.response').remove().end()
+				.find('div.submit, div.submit span.canceltext').show().end()
+				.find('div.submit input[type=submit]').prop('disabled',false).end()
+				.show()
+				.css({
+					top : top,
+					left : left,
+					width : width,
+					position: position,
+					'z-index': 10 // slide under twentyfourteen's fixed-positioned masthead
+				});
+
+			// Ensure we can see the whole reblog box
+			var docViewTop = $window.scrollTop(),
+			    windowHeight = $window.height(),
+			    docViewBottom = docViewTop + windowHeight,
+			    elemTop = $reblog_box.offset().top,
+			    elemHeight = $reblog_box.outerHeight() + 10,
+			    elemBottom = elemTop + elemHeight;
+			if ( docViewTop > elemTop ) {
+				// Need to scroll up
+				// leave 75px for toolbar + Reblog button + margin
+				$scroll.animate({scrollTop: elemTop - 75});
+			}
+			else if ( docViewBottom < elemBottom ) {
+				// Need to scroll down
+				$scroll.animate({scrollTop: elemBottom - windowHeight}, 100);
+			}
+		},
+
+		submit_reblog: function( input ) {
+			var jq = jQuery;
+			var self = this;
+			if ( typeof this.request == 'object' )
+				this.request.abort();
+
+			input.attr( 'value', 'Reblogging...' );
+			input.prop( 'disabled', true );
+
+			jq( '#ab-reblog-box div.submit span.canceltext' ).fadeOut( 150, function() {
+				input.before( '<span class="spinner"></span>' );
+			});
+
+			var note = jq('#ab-reblog-box textarea').val();
+
+			if ( jq('#default-reblog-note').val() == note )
+				note = "";
+
+			this.request = jq.get( '/wp-admin/admin-ajax.php', {
+				'action': 'post_reblog',
+				'original_blog_id': jq('#original-blog-id').val(),
+				'original_post_id': jq('#original-post-id').val(),
+				'blog_id': jq('#ab-reblog-box select').val(),
+				'note': note,
+				'_wpnonce': jq('#ab-reblog-box #_wpnonce').val(),
+				'reblog_source': this.source
+			},
+			function(result, status, jqxhr) {
+				if ( ! ( "type" in result ) ) {
+					alert( "Error: " + jqxhr.responseText );
+				}
+				else if ( "error" == result.type ) {
+					alert( result.message );
+				}
+				else {
+					if ( typeof pm === 'function' ) {
+						console.log(self);
+						pm({
+							target : window.frames['likes-master'],
+							type : 'likesMessage',
+							data : { event: 'didReblog', obj_id: self.obj_id },
+							origin : '*'
+						});
+					}
+
+					jq( '#ab-reblog-box' ).hide();
+					jq( '#wp-admin-bar-wpr-reblog' ).addClass( 'reblogged' ).removeClass( 'reblog' ).find( 'a:first' ).text( 'Reblogged' );
+				}
+			}, 'json' );
+		},
+
+		cancel_reblog: function() {
+			jQuery( '#ab-reblog-box' ).hide();
+			jQuery( '#wp-admin-bar-wpr-reblog' ).removeClass( 'selected' );
+		}
+	};
+
+	wpcom_reblog.init();
+	</script>
+<div id="report-form-window" style="display:none;"></div><script type="text/javascript">
+/* <![CDATA[ */
+var HighlanderComments = {"loggingInText":"Logging In\u2026","submittingText":"Posting Comment\u2026","postCommentText":"Post Comment","connectingToText":"Connecting to %s","commentingAsText":"%1$s: You are commenting using your %2$s account.","logoutText":"Log Out","loginText":"Log In","connectURL":"https:\/\/elementztechblog.wordpress.com\/public.api\/connect\/?action=request","logoutURL":"https:\/\/elementztechblog.wordpress.com\/wp-login.php?action=logout&_wpnonce=877cc57a84","homeURL":"https:\/\/elementztechblog.wordpress.com\/","postID":"3256","gravDefault":"identicon","enterACommentError":"Please enter a comment","enterEmailError":"Please enter your email address here","invalidEmailError":"Invalid email address","enterAuthorError":"Please enter your name here","gravatarFromEmail":"This picture will show whenever you leave a comment. Click to customize it.","logInToExternalAccount":"Log in to use details from one of these accounts.","change":"Change","changeAccount":"Change Account","comment_registration":"0","userIsLoggedIn":"1","isJetpack":"","text_direction":"ltr"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./IBeacon using HM10 BLE module _ Random Codes - Elementz Tech Blog_files/saved_resource(3)"></script>
+
+	<div id="carousel-reblog-box">
+		<form action="https://elementztechblog.wordpress.com/2017/03/23/ibeacon-using-hm10-ble-module/#" name="carousel-reblog">
+			<textarea id="carousel-reblog-content" name="carousel-reblog-content" placeholder="Add your thoughts here... (optional)"></textarea>
+			<label for="carousel-reblog-to-blog-id" id="carousel-reblog-lblogid">Post to</label>
+			<select name="carousel-reblog-to-blog-id" id="carousel-reblog-to-blog-id">
+							<option value="127915617">SDL Labs</option>
+							<option value="148427021">Code Notes</option>
+							<option value="150522841">New Life</option>
+							<option value="150714579">YD1SDL - The Signal Source</option>
+						</select>
+
+			<div class="submit">
+				<span class="canceltext"><a href="https://elementztechblog.wordpress.com/2017/03/23/ibeacon-using-hm10-ble-module/#" class="cancel">Cancel</a></span>
+				<input type="submit" name="carousel-reblog-submit" class="button" id="carousel-reblog-submit" value="Reblog Post">
+				<input type="hidden" id="carousel-reblog-blog-id" value="60730213">
+				<input type="hidden" id="carousel-reblog-blog-url" value="https://elementztechblog.wordpress.com">
+				<input type="hidden" id="carousel-reblog-blog-title" value="Random Codes - Elementz Tech Blog">
+				<input type="hidden" id="carousel-reblog-post-url" value="">
+				<input type="hidden" id="carousel-reblog-post-title" value="">
+			</div>
+
+			<input type="hidden" id="_wpnonce" name="_wpnonce" value="a3957b1fe0"><input type="hidden" name="_wp_http_referer" value="/2017/03/23/ibeacon-using-hm10-ble-module/">		</form>
+
+		<div class="arrow"></div>
+	</div>
+
+	<script type="text/javascript">
+		window.WPCOM_sharing_counts = {"https:\/\/elementztechblog.wordpress.com\/2017\/03\/23\/ibeacon-using-hm10-ble-module\/":3256};
+	</script>
+				<link rel="stylesheet" id="all-css-0-3" href="./IBeacon using HM10 BLE module _ Random Codes - Elementz Tech Blog_files/jetpack-carousel.css" type="text/css" media="all">
+<!--[if lte IE 8]>
+<link rel='stylesheet' id='jetpack-carousel-ie8fix-css'  href='https://s1.wp.com/wp-content/mu-plugins/carousel/jetpack-carousel-ie8fix.css?m=1412618825h&#038;ver=20121024' type='text/css' media='all' />
+<![endif]-->
+<link rel="stylesheet" id="all-css-2-3" href="./IBeacon using HM10 BLE module _ Random Codes - Elementz Tech Blog_files/contact-info-map.css" type="text/css" media="all">
+<script type="text/javascript">
+/* <![CDATA[ */
+var thickboxL10n = {"next":"Next >","prev":"< Prev","image":"Image","of":"of","close":"Close","noiframes":"This feature requires inline frames. You have iframes disabled or your browser does not support them.","loadingAnimation":"https:\/\/s2.wp.com\/wp-includes\/js\/thickbox\/loadingAnimation.gif"};
+/* ]]> */
+</script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var jpfbembed = {"appid":"249643311490","locale":"en_US"};
+/* ]]> */
+</script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var wpNotesArgs = {"cacheBuster":"desktop\/2.4.0-13279-g67a63e0","iframeUrl":"https:\/\/widgets.wp.com\/notifications\/","iframeAppend":"2","iframeScroll":"no","wide":"1"};
+/* ]]> */
+</script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var wpcom_tos_report_form = {"ajaxurl":"\/wp-admin\/admin-ajax.php","isLoggedoutUser":"","post_ID":"3256","current_url":"https:\/\/elementztechblog.wordpress.com\/2017\/03\/23\/ibeacon-using-hm10-ble-module","report_this_content":"Report this content"};
+/* ]]> */
+</script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var actionbardata = {"siteID":"60730213","siteName":"Random Codes - Elementz Tech Blog","siteURL":"http:\/\/elementztechblog.wordpress.com","icon":"<img alt='' src='https:\/\/s2.wp.com\/i\/logo\/wpcom-gray-white.png' class='avatar avatar-50' height='50' width='50' \/>","canManageOptions":"","canCustomizeSite":"","isFollowing":"","themeSlug":"pub\/expound","signupURL":"https:\/\/wordpress.com\/start\/","loginURL":"https:\/\/elementztechblog.wordpress.com\/wp-login.php?redirect_to=https%3A%2F%2Felementztechblog.wordpress.com%2F2017%2F03%2F23%2Fibeacon-using-hm10-ble-module%2F","themeURL":"","xhrURL":"https:\/\/elementztechblog.wordpress.com\/wp-admin\/admin-ajax.php","nonce":"490ea2759d","isSingular":"1","isFolded":"","isLoggedIn":"1","isMobile":"","subscribeNonce":"<input type=\"hidden\" id=\"_wpnonce\" name=\"_wpnonce\" value=\"a3d799ba39\" \/>","referer":"https:\/\/elementztechblog.wordpress.com\/2017\/03\/23\/ibeacon-using-hm10-ble-module\/","canFollow":"1","feedID":"15852805","statusMessage":"","customizeLink":"https:\/\/elementztechblog.wordpress.com\/wp-admin\/customize.php?url=https%3A%2F%2Felementztechblog.wordpress.com%2F2017%2F03%2F23%2Fibeacon-using-hm10-ble-module%2F","postID":"3256","shortlink":"https:\/\/wp.me\/p46OHz-Qw","canEditPost":"","editLink":"https:\/\/wordpress.com\/post\/elementztechblog.wordpress.com\/3256","statsLink":"https:\/\/wordpress.com\/stats\/post\/3256\/elementztechblog.wordpress.com","i18n":{"view":"View site","follow":"Follow","following":"Following","edit":"Edit","login":"Log in","signup":"Sign up","customize":"Customize","report":"Report this content","themeInfo":"Get theme: Expound","shortlink":"Copy shortlink","copied":"Copied","followedText":"New posts from this site will now appear in your <a href=\"https:\/\/wordpress.com\/\">Reader<\/a>","foldBar":"Collapse this bar","unfoldBar":"Expand this bar","editSubs":"Manage subscriptions","viewReader":"View site in Reader","viewReadPost":"View post in Reader","subscribe":"Sign me up","enterEmail":"Enter your email address","followers":"Join 2,100 other followers","alreadyUser":"Already have a WordPress.com account? <a href=\"https:\/\/elementztechblog.wordpress.com\/wp-login.php?redirect_to=https%3A%2F%2Felementztechblog.wordpress.com%2F2017%2F03%2F23%2Fibeacon-using-hm10-ble-module%2F\">Log in now.<\/a>","stats":"Stats"}};
+/* ]]> */
+</script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var jetpackCarouselStrings = {"widths":[370,700,1000,1200,1400,2000],"is_logged_in":"1","lang":"en","ajaxurl":"https:\/\/elementztechblog.wordpress.com\/wp-admin\/admin-ajax.php","nonce":"00f1bd2c61","display_exif":"1","display_geo":"1","single_image_gallery":"1","single_image_gallery_media_file":"","background_color":"black","comment":"Comment","post_comment":"Post Comment","write_comment":"Write a Comment...","loading_comments":"Loading Comments...","download_original":"View full size <span class=\"photo-size\">{0}<span class=\"photo-size-times\">\u00d7<\/span>{1}<\/span>","no_comment_text":"Please be sure to submit some text with your comment.","no_comment_email":"Please provide an email address to comment.","no_comment_author":"Please provide your name to comment.","comment_post_error":"Sorry, but there was an error posting your comment. Please try again later.","comment_approved":"Your comment was approved.","comment_unapproved":"Your comment is in moderation.","camera":"Camera","aperture":"Aperture","shutter_speed":"Shutter Speed","focal_length":"Focal Length","copyright":"Copyright","comment_registration":"0","require_name_email":"1","login_url":"https:\/\/elementztechblog.wordpress.com\/wp-login.php?redirect_to=https%3A%2F%2Felementztechblog.wordpress.com%2F2017%2F03%2F23%2Fibeacon-using-hm10-ble-module%2F","blog_id":"60730213","meta_data":["camera","aperture","shutter_speed","focal_length","copyright"],"local_comments_commenting_as":"<p id=\"jp-carousel-commenting-as\">Commenting as handiko<\/p>","reblog":"Reblog","reblogged":"Reblogged","reblog_add_thoughts":"Add your thoughts here... (optional)","reblogging":"Reblogging...","post_reblog":"Post Reblog","stats_query_args":"blog=60730213&v=wpcom&tz=5&user_id=13338597&subd=elementztechblog","is_public":"1","reblog_enabled":"1"};
+/* ]]> */
+</script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var sharing_js_options = {"lang":"en","counts":"1"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./IBeacon using HM10 BLE module _ Random Codes - Elementz Tech Blog_files/saved_resource(4)"></script><div id="fb-root"></div><div id="actionbar" class="actnbr-pub-expound actnbr-has-follow actnbr-hidden"><ul><li class="actnbr-btn actnbr-hidden"> 			    	<a class="actnbr-action actnbr-actn-follow" href="https://elementztechblog.wordpress.com/2017/03/23/ibeacon-using-hm10-ble-module/"><svg class="gridicon gridicon__follow" height="24px" width="24px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g><path d="M23 16v2h-3v3h-2v-3h-3v-2h3v-3h2v3h3zM20 2v9h-4v3h-3v4H4c-1.1 0-2-.9-2-2V2h18zM8 13v-1H4v1h4zm3-3H4v1h7v-1zm0-2H4v1h7V8zm7-4H4v2h14V4z"></path></g></svg><span>Follow</span></a> 			    	<div class="actnbr-popover tip tip-top-left actnbr-notice"> 			    		<div class="tip-arrow"></div> 			    		<div class="tip-inner actnbr-follow-bubble"></div> 			    	</div> 			    </li><li class="actnbr-ellipsis actnbr-hidden"> 			  <svg class="gridicon gridicon__ellipsis" height="24" width="24" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g><circle cx="5" cy="12" r="2"></circle><circle cx="19" cy="12" r="2"></circle><circle cx="12" cy="12" r="2"></circle></g></svg> 			  <div class="actnbr-popover tip tip-top-left actnbr-more"> 			  	<div class="tip-arrow"></div> 			  	<div class="tip-inner"> 				  <ul> 				    <li class="actnbr-sitename actnbr-hidden"><a href="http://elementztechblog.wordpress.com/"><img alt="" src="./IBeacon using HM10 BLE module _ Random Codes - Elementz Tech Blog_files/wpcom-gray-white.png" class="avatar avatar-50" height="50" width="50"> Random Codes - Elementz Tech Blog</a></li> 				   	<li class="actnbr-folded-customize actnbr-hidden"><a href="https://elementztechblog.wordpress.com/wp-admin/customize.php?url=https%3A%2F%2Felementztechblog.wordpress.com%2F2017%2F03%2F23%2Fibeacon-using-hm10-ble-module%2F"><svg class="gridicon gridicon__customize" height="20px" width="20px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g><path d="M2 6c0-1.505.78-3.08 2-4 0 .845.69 2 2 2 1.657 0 3 1.343 3 3 0 .386-.08.752-.212 1.09.74.594 1.476 1.19 2.19 1.81L8.9 11.98c-.62-.716-1.214-1.454-1.807-2.192C6.753 9.92 6.387 10 6 10c-2.21 0-4-1.79-4-4zm12.152 6.848l1.34-1.34c.607.304 1.283.492 2.008.492 2.485 0 4.5-2.015 4.5-4.5 0-.725-.188-1.4-.493-2.007L18 9l-2-2 3.507-3.507C18.9 3.188 18.225 3 17.5 3 15.015 3 13 5.015 13 7.5c0 .725.188 1.4.493 2.007L3 20l2 2 6.848-6.848c1.885 1.928 3.874 3.753 5.977 5.45l1.425 1.148 1.5-1.5-1.15-1.425c-1.695-2.103-3.52-4.092-5.448-5.977z" data-reactid=".2.1.1:0.1b.0"></path></g></svg><span>Customize<span></span></span></a></li> 				    <li class="actnbr-folded-follow actnbr-hidden"><a class="actnbr-action actnbr-actn-follow" href="https://elementztechblog.wordpress.com/2017/03/23/ibeacon-using-hm10-ble-module/"><svg class="gridicon gridicon__follow" height="24px" width="24px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g><path d="M23 16v2h-3v3h-2v-3h-3v-2h3v-3h2v3h3zM20 2v9h-4v3h-3v4H4c-1.1 0-2-.9-2-2V2h18zM8 13v-1H4v1h4zm3-3H4v1h7v-1zm0-2H4v1h7V8zm7-4H4v2h14V4z"></path></g></svg><span>Follow</span></a></li> 					 				     				     				    <li class="actnbr-shortlink actnbr-hidden"><a href="https://wp.me/p46OHz-Qw">Copy shortlink</a></li> 				    <li class="flb-report actnbr-hidden"><a href="http://en.wordpress.com/abuse/">Report this content</a></li> 				    <li class="actnbr-reader actnbr-hidden"><a href="https://wordpress.com/read/blogs/60730213/posts/3256">View post in Reader</a></li> 				    <li class="actnbr-follows actnbr-hidden"><a href="https://wordpress.com/following/edit">Manage subscriptions</a></li> 				     				    <li class="actnbr-fold actnbr-hidden"><a href="https://elementztechblog.wordpress.com/2017/03/23/ibeacon-using-hm10-ble-module/">Collapse this bar</a></li> 			      </ul> 			    </div> 		      </div> 		    </li> 	      </ul></div>
+<script type="text/javascript">
+var windowOpen;
+			jQuery( document.body ).on( 'click', 'a.share-twitter', function() {
+				// If there's another sharing window open, close it.
+				if ( 'undefined' !== typeof windowOpen ) {
+					windowOpen.close();
+				}
+				windowOpen = window.open( jQuery( this ).attr( 'href' ), 'wpcomtwitter', 'menubar=1,resizable=1,width=600,height=350' );
+				return false;
+			});
+var windowOpen;
+			jQuery( document.body ).on( 'click', 'a.share-facebook', function() {
+				// If there's another sharing window open, close it.
+				if ( 'undefined' !== typeof windowOpen ) {
+					windowOpen.close();
+				}
+				windowOpen = window.open( jQuery( this ).attr( 'href' ), 'wpcomfacebook', 'menubar=1,resizable=1,width=600,height=400' );
+				return false;
+			});
+var windowOpen;
+			jQuery( document.body ).on( 'click', 'a.share-google-plus-1', function() {
+				// If there's another sharing window open, close it.
+				if ( 'undefined' !== typeof windowOpen ) {
+					windowOpen.close();
+				}
+				windowOpen = window.open( jQuery( this ).attr( 'href' ), 'wpcomgoogle-plus-1', 'menubar=1,resizable=1,width=480,height=550' );
+				return false;
+			});
+</script>
+<script type="text/javascript">
+// <![CDATA[
+(function() {
+try{
+  if ( window.external &&'msIsSiteMode' in window.external) {
+    if (window.external.msIsSiteMode()) {
+      var jl = document.createElement('script');
+      jl.type='text/javascript';
+      jl.async=true;
+      jl.src='/wp-content/plugins/ie-sitemode/custom-jumplist.php';
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(jl, s);
+    }
+  }
+}catch(e){}
+})();
+// ]]>
+</script>		<iframe src="./IBeacon using HM10 BLE module _ Random Codes - Elementz Tech Blog_files/master.html" scrolling="no" id="likes-master" name="likes-master" style="display:none;"></iframe>
+		<div id="likes-other-gravatars"><div class="likes-text"><span>%d</span> bloggers like this:</div><ul class="wpl-avatars sd-like-gravatars"></ul></div>
+<script src="./IBeacon using HM10 BLE module _ Random Codes - Elementz Tech Blog_files/w.js(1).download" type="text/javascript" async="" defer=""></script>
+<script type="text/javascript">
+_tkq = window._tkq || [];
+_stq = window._stq || [];
+_tkq.push(['identifyUser', 13338597, 'handikogesang']);
+_tkq.push(['storeContext', {'blog_id':'60730213','blog_tz':'5','user_lang':'en','blog_lang':'en'}]);
+_stq.push(['view', {'blog':'60730213','v':'wpcom','tz':'5','user_id':'13338597','post':'3256','subd':'elementztechblog'}]);
+_stq.push(['extra', {'crypt':'UE40eW5QN0p8M2Y/RE1zNDZ8S252Wis9XUQyb3YrcUVIU2R0VH5TcUpqcF9NWi1bMDJfLy90VXNvY2U3ZFZ1RWlDZ2dfWmwuT1t4S1d5WEtqWSxUSC9KOVJEJTRTQl85LTU0MVt+WF8rP0lSbWZaTElQWUhubWFpRj0sZ2M0OFdXbllUYjM1VyxLZVk1Z2c0cGpfb25WanBUVk9ldzRKNW5ZOE9kL00uRz03ZnNKeWgycFoxaVZabThCSU0lajhHNVVpcE1LJj8sN1JhbFA3YUtdS1JOb25rUG40RV9JPThGRFtpSVFQL0QwcHhFZjgvWkY3Qiw3TUtYdXx5RmhhX2FaVz1lMFRvcj8xX1VtYU0zUWNKWFU3dWFQW2ViRVZnL3VSM2UvJTN8Ym1IW3N0R2tnUkU2cWRsX1l0WUI/Sm8scUtMd3EmMW9+VEh+OQ=='}]);
+_stq.push([ 'clickTrackerInit', '60730213', '3256' ]);
+	</script>
+<noscript><img src="https://pixel.wp.com/b.gif?v=noscript" style="height:0px;width:0px;overflow:hidden" alt="" /></noscript>
+		<div id="wpadminbar" class="ltr">
+							<a class="screen-reader-shortcut" href="https://elementztechblog.wordpress.com/2017/03/23/ibeacon-using-hm10-ble-module/#wp-toolbar" tabindex="1">Skip to toolbar</a>
+						<div class="quicklinks" id="wp-toolbar" role="navigation" aria-label="Toolbar" tabindex="0">
+						<ul id="wp-admin-bar-root-default" class="ab-top-menu">
+			
+		<li id="wp-admin-bar-blog" class="menupop my-sites mb-trackable"><a class="ab-item" aria-haspopup="true" href="https://wordpress.com/stats/labsdl.wordpress.com">My Sites</a>			<div class="ab-sub-wrapper">		<ul id="wp-admin-bar-blog-default" class="ab-submenu">
+			
+		<li id="wp-admin-bar-switch-site"><a class="ab-item" href="https://wordpress.com/sites">Switch Site</a>		</li>
+		<li id="wp-admin-bar-blog-info" class="has-blavatar"><a class="ab-item" href="https://labsdl.wordpress.com/"><div class="ab-site-icon"><img class="avatar" src="./IBeacon using HM10 BLE module _ Random Codes - Elementz Tech Blog_files/cropped-yagisunrise_full1.jpg" alt="Current site avatar"> </div><span class="ab-site-title">SDL Labs</span><span class="ab-site-description">labsdl.wordpress.com</span></a>		</li>
+		<li id="wp-admin-bar-blog-stats" class="mb-icon"><a class="ab-item" href="https://wordpress.com/stats/labsdl.wordpress.com">Stats <img style="width: 95px; margin: 0; float: right;" src="./IBeacon using HM10 BLE module _ Random Codes - Elementz Tech Blog_files/admin-bar-hours-scale-2x.php" alt="Stats" title="Showing site views per hour for the last 48 hours. Click for full Site Stats."></a>		</li>
+		<li id="wp-admin-bar-activity" class="mb-icon"><a class="ab-item" href="https://wordpress.com/activity-log/labsdl.wordpress.com">Activity</a>		</li>
+		<li id="wp-admin-bar-plan" class="inline-action">		<div class="ab-item ab-empty-item"><a href="https://wordpress.com/plans/labsdl.wordpress.com" class="ab-item ab-primary mb-icon" id="wp-admin-bar-plan">Plan</a><a href="https://wordpress.com/plans/labsdl.wordpress.com" class="ab-secondary" id="wp-admin-bar-plan-badge">Free</a></div>		</li>		</ul>
+			<ul id="wp-admin-bar-publish" class="ab-submenu">
+			
+		<li id="wp-admin-bar-publish-header" class="ab-submenu-header">		<div class="ab-item ab-empty-item">Manage</div>		</li>
+		<li id="wp-admin-bar-new-page" class="inline-action">		<div class="ab-item ab-empty-item"><a href="https://wordpress.com/pages/labsdl.wordpress.com" class="ab-item ab-primary mb-icon" id="wp-admin-bar-edit-page">Site Pages</a><a href="https://wordpress.com/page/labsdl.wordpress.com" class="ab-secondary" id="wp-admin-bar-new-page-badge">Add</a></div>		</li>
+		<li id="wp-admin-bar-new-post" class="inline-action">		<div class="ab-item ab-empty-item"><a href="https://wordpress.com/posts/labsdl.wordpress.com" class="ab-item ab-primary mb-icon" id="wp-admin-bar-edit-post">Blog Posts</a><a href="https://wordpress.com/post/labsdl.wordpress.com" class="ab-secondary" id="wp-admin-bar-new-post-badge">Add</a></div>		</li>
+		<li id="wp-admin-bar-new-attachment" class="inline-action">		<div class="ab-item ab-empty-item"><a href="https://wordpress.com/media/labsdl.wordpress.com" class="ab-item ab-primary mb-icon" id="wp-admin-bar-edit-attachment">Media</a><a href="https://wordpress.com/media/labsdl.wordpress.com" class="ab-secondary" id="wp-admin-bar-new-attachment-badge">Add</a></div>		</li>
+		<li id="wp-admin-bar-comments" class="mb-icon"><a class="ab-item" href="https://wordpress.com/comments/labsdl.wordpress.com">Comments</a>		</li>		</ul>
+			<ul id="wp-admin-bar-look-and-feel" class="ab-submenu">
+			
+		<li id="wp-admin-bar-look-and-feel-header" class="ab-submenu-header">		<div class="ab-item ab-empty-item">Personalize</div>		</li>
+		<li id="wp-admin-bar-themes" class="inline-action">		<div class="ab-item ab-empty-item"><a href="https://labsdl.wordpress.com/wp-admin/customize.php?url=https%3A%2F%2Felementztechblog.wordpress.com%2F2017%2F03%2F23%2Fibeacon-using-hm10-ble-module%2F" class="ab-item ab-primary mb-icon" id="wp-admin-bar-cmz">Customize</a><a href="https://wordpress.com/themes/labsdl.wordpress.com" class="ab-secondary" id="wp-admin-bar-themes">Themes</a></div>		</li>		</ul>
+			<ul id="wp-admin-bar-configuration" class="ab-submenu">
+			
+		<li id="wp-admin-bar-configuration-header" class="ab-submenu-header">		<div class="ab-item ab-empty-item">Configure</div>		</li>
+		<li id="wp-admin-bar-sharing" class="mb-icon"><a class="ab-item" href="https://wordpress.com/sharing/labsdl.wordpress.com">Sharing</a>		</li>
+		<li id="wp-admin-bar-users-toolbar" class="inline-action">		<div class="ab-item ab-empty-item"><a href="https://wordpress.com/people/team/labsdl.wordpress.com" class="ab-item ab-primary mb-icon" id="wp-admin-bar-people">People</a><a href="https://wordpress.com/people/new/labsdl.wordpress.com" class="ab-secondary" id="wp-admin-bar-people-add">Add</a></div>		</li>
+		<li id="wp-admin-bar-plugins"><a class="ab-item" href="https://wordpress.com/plugins/wpcom-masterbar-redirect/labsdl.wordpress.com">Plugins</a>		</li>
+		<li id="wp-admin-bar-domains" class="inline-action">		<div class="ab-item ab-empty-item"><a href="https://wordpress.com/domains/labsdl.wordpress.com" class="ab-item ab-primary mb-icon" id="wp-admin-bar-domains">Domains</a><a href="https://wordpress.com/domains/add/labsdl.wordpress.com" class="ab-secondary" id="wp-admin-bar-domains-add">Add</a></div>		</li>
+		<li id="wp-admin-bar-blog-settings" class="mb-icon"><a class="ab-item" href="https://wordpress.com/settings/general/labsdl.wordpress.com">Settings</a>		</li>
+		<li id="wp-admin-bar-legacy-dashboard" class="mb-icon"><a class="ab-item" href="https://elementztechblog.wordpress.com/wp-admin/">WP Admin</a>		</li>		</ul>
+	</div>		</li>
+		<li id="wp-admin-bar-jumptotop-button-menu"><a class="ab-item" href="https://elementztechblog.wordpress.com/2017/03/23/ibeacon-using-hm10-ble-module/#"><div id="jumptotop" style="top: 0px;"><span class="noticon noticon-top"></span></div></a>		</li>
+		<li id="wp-admin-bar-newdash" class="menupop mb-trackable"><a class="ab-item" aria-haspopup="true" href="https://wordpress.com/">Reader</a>			<div class="ab-sub-wrapper">		<ul id="wp-admin-bar-newdash-default" class="ab-submenu">
+			
+		<li id="wp-admin-bar-streams-header" class="ab-submenu-header">		<div class="ab-item ab-empty-item">Streams</div>		</li>
+		<li id="wp-admin-bar-following" class="inline-action">		<div class="ab-item ab-empty-item"><a href="https://wordpress.com/" class="ab-item ab-primary mb-icon" id="wp-admin-bar-followed-sites">Followed Sites</a><a href="https://wordpress.com/following/edit" class="ab-secondary" id="wp-admin-bar-reader-followed-sites-manage">Manage</a></div>		</li>
+		<li id="wp-admin-bar-conversations" class="mb-icon"><a class="ab-item" href="http://wordpress.com/read/conversations">Conversations</a>		</li>
+		<li id="wp-admin-bar-discover-discover" class="mb-icon-spacer"><a class="ab-item" href="https://wordpress.com/discover">Discover</a>		</li>
+		<li id="wp-admin-bar-discover-search" class="mb-icon-spacer"><a class="ab-item" href="https://wordpress.com/read/search">Search</a>		</li>
+		<li id="wp-admin-bar-my-activity-my-likes" class="mb-icon-spacer"><a class="ab-item" href="https://wordpress.com/activities/likes">My Likes</a>		</li>		</ul>
+	</div>		</li>		</ul>
+			<ul id="wp-admin-bar-top-secondary" class="ab-top-secondary ab-top-menu">
+			
+		<li id="wp-admin-bar-notes" class="menupop">		<div class="ab-item ab-empty-item"><span id="wpnt-notes-unread-count" class="wpnt-loading wpn-read"></span><span class="noticon noticon-bell"></span><span class="ab-text">Notifications</span></div><div id="wpnt-notes-panel2" style="display:none" lang="en" dir="ltr" class="wide"><iframe style="" id="wpnt-notes-iframe2" frameborder="0" allowtransparency="true" scrolling="no" src="./IBeacon using HM10 BLE module _ Random Codes - Elementz Tech Blog_files/saved_resource(10).html" class="wide"></iframe></div>		</li>
+		<li id="wp-admin-bar-my-account" class="menupop with-avatar mb-trackable no-grav"><a class="ab-item" aria-haspopup="true" href="https://wordpress.com/me/"><img alt="" src="./IBeacon using HM10 BLE module _ Random Codes - Elementz Tech Blog_files/abdd45f02257965ec95b8ac575193c64(2).jpeg" class="avatar avatar-32" height="32" width="32"><span class="ab-text">Me</span></a>			<div class="ab-sub-wrapper">		<ul id="wp-admin-bar-user-actions" class="ab-submenu">
+			
+		<li id="wp-admin-bar-user-info" class="user-info user-info-item">		<div class="ab-item ab-empty-item" tabindex="-1"><img alt="" src="./IBeacon using HM10 BLE module _ Random Codes - Elementz Tech Blog_files/abdd45f02257965ec95b8ac575193c64(3).jpeg" class="avatar avatar-128" height="128" width="128"><span class="display-name">handiko</span><a class="username" href="http://gravatar.com/handikogesang">@handikogesang</a><form action="https://elementztechblog.wordpress.com/wp-login.php?action=logout&amp;redirect_to=https%3A%2F%2Fwordpress.com%2F%3Fapppromo&amp;_wpnonce=877cc57a84" method="post"><button class="ab-sign-out" type="submit">Sign Out</button></form></div>		</li>
+		<li id="wp-admin-bar-profile-header" class="ab-submenu-header">		<div class="ab-item ab-empty-item">Profile</div>		</li>
+		<li id="wp-admin-bar-my-profile" class="mb-icon"><a class="ab-item" href="https://wordpress.com/me">My Profile</a>		</li>
+		<li id="wp-admin-bar-account-settings" class="mb-icon"><a class="ab-item" href="https://wordpress.com/me/account">Account Settings</a>		</li>
+		<li id="wp-admin-bar-billing" class="mb-icon"><a class="ab-item" href="https://wordpress.com/me/purchases">Manage Purchases</a>		</li>
+		<li id="wp-admin-bar-security" class="mb-icon"><a class="ab-item" href="https://wordpress.com/me/security">Security</a>		</li>
+		<li id="wp-admin-bar-notifications" class="mb-icon mb-trackable"><a class="ab-item" href="https://wordpress.com/me/notifications">Notifications</a>		</li>
+		<li id="wp-admin-bar-special-header" class="ab-submenu-header">		<div class="ab-item ab-empty-item">Special</div>		</li>
+		<li id="wp-admin-bar-get-apps" class="mb-icon"><a class="ab-item" href="https://wordpress.com/me/get-apps">Get Apps</a>		</li>
+		<li id="wp-admin-bar-help" class="mb-icon"><a class="ab-item" href="https://wordpress.com/help">Help</a>		</li>		</ul>
+	</div>		</li>
+		<li id="wp-admin-bar-ab-new-post" class="mb-trackable"><a class="ab-item" href="https://wordpress.com/post/labsdl.wordpress.com"><span>Write</span></a>		</li>		</ul>
+				</div>
+							<a class="screen-reader-shortcut" href="https://elementztechblog.wordpress.com/wp-login.php?action=logout&amp;_wpnonce=877cc57a84">Log Out</a>
+					</div>
+
+	
+<script type="text/javascript">
+/* <![CDATA[ */
+var clickDebugLink;
+
+jQuery(document).ready( function($) {
+	var single = true, w = 1000,
+		supe = false;
+
+	$(document.body).load(function(){ $('#wpadminbar img.grav-hashed').removeClass('grav-hashed'); }); // hack to hide the gravatar hovercard
+
+	if ( single && supe )
+		w = 1385;
+	else if ( supe )
+		w = 1200;
+
+	// debug bar extra
+	clickDebugLink = function( parent_id, obj ) {
+
+		$('#'+parent_id).children('div').hide();
+
+		document.getElementById( obj.href.substr( obj.href.indexOf( '#' ) + 1 ) ).style.display = 'block';
+		$( obj.href.substr( obj.href.indexOf( '#' ) ) ).show()
+
+		$(obj).parent().addClass('current').siblings('li').removeClass('current');
+
+		return false;
+	};
+
+	$( '#wpadminbar #wp-admin-bar-shortlink' ).click( function() {
+		$( '#adminbar-shortlink-input' ).select();
+	});
+
+	// skip tap-to-hover on site switcher for mobile
+	if ( 'ontouchstart' in window ) {
+		$('#wp-admin-bar-switch-site').on( 'touchstart', function( event ) {
+			if ( $( window ).width() > 782 ) {
+				return;
+			}
+			event.stopPropagation();
+			$( event.target ).first( 'a' ).click();
+		});
+	}
+
+});
+/* ]]> */
+</script>
+	<div class="wpcom-bubble action-bubble">
+		<div class="bubble-txt"></div>
+	</div>
+	<script type="text/javascript">function hideBubble() { jQuery('body').append( jQuery( 'div.wpcom-bubble' ).removeClass( 'fadein' ) ).off( 'click.bubble touchstart.bubble' ); jQuery(document).off( 'scroll.bubble' ); };</script>
+		<script type="text/javascript">
+	jQuery( '#wp-admin-bar-jumptotop-button-menu a' ).click( function( e ) {
+		e.preventDefault();
+		jQuery( 'html, body' ).animate( { scrollTop: 0 }, 'fast' );
+	} );
+	function hideShowTbJumpToTop() {
+		var total_width = 0;
+		// Calculate total width taken by items minus our button to see if it'll
+		// overlap with other toolbar menus.
+		jQuery( '#wp-admin-bar-root-default > li' ).each( function() {
+			var self = jQuery( this );
+			if ( 'wp-admin-bar-jumptotop-button-menu' != self.attr( 'id' ) )
+				total_width += self.width();
+		});
+		if ( jQuery( '#wp-admin-bar-jumptotop-button-menu' ).position()['left'] - total_width < 10 ) {
+			jQuery( '#jumptotop' ).animate( { 'top': '-50px' }, 'fast' );
+		} else if (  jQuery( window ).scrollTop() >= 350 && parseInt( jQuery( '#jumptotop' ).css( 'top' ) ) < 0 ) {
+			if ( jQuery( '#wp-admin-bar-jumptotop-button-menu' ).position()['left'] - total_width < 10 )
+			   return;
+			jQuery( '#jumptotop' ).animate( { 'top': 0 }, 'fast' );
+		} else if (  jQuery( window ).scrollTop() < 1 && parseInt( jQuery( '#jumptotop' ).css( 'top' ) ) >= 0 ) {
+			jQuery( '#jumptotop' ).animate( { 'top': '-50px' }, 'fast' );
+		}
+	}
+	// handle on page load if auto scrolling to a position
+	hideShowTbJumpToTop();
+	// bind to scrolll event
+	var jumpToTopTimer = null;
+	jQuery( window ).scroll( function() {
+		clearTimeout( jumpToTopTimer );
+		jumpToTopTimer = setTimeout( jumpToTopRefresh, 150 );
+	} );
+	var jumpToTopRefresh = function() {
+		hideShowTbJumpToTop();
+	};
+	</script>
+	<script>
+if ( 'object' === typeof wpcom_mobile_user_agent_info ) {
+
+	wpcom_mobile_user_agent_info.init();
+	var mobileStatsQueryString = "";
+	
+	if( false !== wpcom_mobile_user_agent_info.matchedPlatformName )
+		mobileStatsQueryString += "&x_" + 'mobile_platforms' + '=' + wpcom_mobile_user_agent_info.matchedPlatformName;
+	
+	if( false !== wpcom_mobile_user_agent_info.matchedUserAgentName )
+		mobileStatsQueryString += "&x_" + 'mobile_devices' + '=' + wpcom_mobile_user_agent_info.matchedUserAgentName;
+	
+	if( wpcom_mobile_user_agent_info.isIPad() )
+		mobileStatsQueryString += "&x_" + 'ipad_views' + '=' + 'views';
+
+	if( "" != mobileStatsQueryString ) {
+		new Image().src = document.location.protocol + '//pixel.wp.com/g.gif?v=wpcom-no-pv' + mobileStatsQueryString + '&baba=' + Math.random();
+	}
+	
+}
+</script>
+
+<img src="./IBeacon using HM10 BLE module _ Random Codes - Elementz Tech Blog_files/g.gif" alt=":)" id="wpstats"></body><div><div class="gr_-editor gr-iframe-first-load" style="display: none;"><div class="gr_-editor_back"></div><iframe class="gr_-ifr gr-_dialog-content" src="./IBeacon using HM10 BLE module _ Random Codes - Elementz Tech Blog_files/saved_resource(11).html"></iframe></div></div><grammarly-card><div></div></grammarly-card><span class="gr__tooltip"><span class="gr__tooltip-content"></span><i class="gr__tooltip-logo"></i><span class="gr__triangle"></span></span></html>
