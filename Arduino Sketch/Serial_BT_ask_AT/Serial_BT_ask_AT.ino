@@ -20,16 +20,18 @@ AltSoftSerial BTserial;
  
 char c=' ';
 boolean NL = true;
+const int baud=9600;
  
 void setup() 
 {
-    Serial.begin(9600);
+    Serial.begin(baud);
     Serial.print("Sketch:   ");   Serial.println(__FILE__);
     Serial.print("Uploaded: ");   Serial.println(__DATE__);
     Serial.println(" ");
  
-    BTserial.begin(9600);  
-    Serial.println("BTserial started at 9600");
+    BTserial.begin(baud);  
+    Serial.print("BTserial started at ");
+    Serial.println(baud);
 }
  
 void loop()
