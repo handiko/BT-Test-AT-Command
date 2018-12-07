@@ -5,7 +5,7 @@ void setup() {
 
 void loop() {
   // put your main code here, to run repeatedly:
-  if(Serial.available() > 0)
+  if(Serial.available())
   {
     Serial.println(Serial.read(),DEC);
   }
