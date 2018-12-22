@@ -14,9 +14,8 @@
 //
  
 #include <AltSoftSerial.h>
+
 AltSoftSerial BTserial; 
-// https://www.pjrc.com/teensy/td_libs_AltSoftSerial.html
- 
  
 char c=' ';
 boolean NL = true;
@@ -36,7 +35,6 @@ void setup()
  
 void loop()
 {
-    // Read from the Bluetooth module and send to the Arduino Serial Monitor
     if (BTserial.available())
     {
         c = BTserial.read();
@@ -44,7 +42,6 @@ void loop()
     }
  
  
-    // Read from the Serial Monitor and send to the Bluetooth module
     if (Serial.available())
     {
         c = Serial.read();
